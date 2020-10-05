@@ -5,7 +5,11 @@
  */
 export default function (ScratchBlocks) {
     const name = 'ruby';
+    const name2 = 'tester'
     if (ScratchBlocks.Categories.hasOwnProperty(name)) {
+        return ScratchBlocks;
+    }
+    if (ScratchBlocks.Categories.hasOwnProperty(name2)) {
         return ScratchBlocks;
     }
     ScratchBlocks.Categories[name] = name;
@@ -14,9 +18,19 @@ export default function (ScratchBlocks) {
         secondary: '#DB4D7B',
         tertiary: '#7A0028'
     };
+    ScratchBlocks.Categories[name2] = name2;
+    ScratchBlocks.Colours[name2] = {
+        primary: '#CC0043',
+        secondary: '#DB4D7B',
+        tertiary: '#7A0028'
+    };
     ScratchBlocks.Extensions.register(
         `colours_${name}`,
         ScratchBlocks.ScratchBlocks.VerticalExtensions.colourHelper(name)
+    );
+    ScratchBlocks.Extensions.register(
+        `colours_${name2}`,
+        ScratchBlocks.ScratchBlocks.VerticalExtensions.colourHelper(name2)
     );
 
     ScratchBlocks.Blocks.ruby_statement = {

@@ -944,6 +944,22 @@ const ruby = function () {
     `;
 };
 
+ScratchBlocks.Msg.CATEGORY_TESTER = 'tester';
+ScratchBlocks.ScratchMsgs.locales.en.CATEGORY_TESTER = 'tester';
+ScratchBlocks.ScratchMsgs.locales.ja.CATEGORY_TESTER = 'テスター';
+ScratchBlocks.ScratchMsgs.locales['ja-Hira'].CATEGORY_TESTER = 'テスター';
+
+const tester = function () {
+    return `
+    <category
+        name="%{BKY_CATEGORY_TESTER}"
+        id="tester"
+        colour="#CC0043"
+        secondaryColour="#FF4D6A">
+        </category>
+        `;
+};
+
 const xmlOpen = '<xml style="display: none">';
 const xmlClose = '</xml>';
 
@@ -967,7 +983,8 @@ const makeToolboxXML = function (isStage, targetId, categoriesXML) {
         operators(isStage, targetId), gap,
         variables(isStage, targetId), gap,
         myBlocks(isStage, targetId), gap,
-        ruby(isStage, targetId)
+        ruby(isStage, targetId),gap,
+        tester(isStage, targetId)
     ];
 
     if (categoriesXML) {
