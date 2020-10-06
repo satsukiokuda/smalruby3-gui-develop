@@ -1109,6 +1109,40 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.pt_output = {
+        init: function () {
+            this.jsonInit({
+                type: 'pt_output',
+                message0: 'Pt100 出力%1.%2℃',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'num_main'
+
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }

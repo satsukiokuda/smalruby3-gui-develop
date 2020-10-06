@@ -150,5 +150,13 @@ export default function (Generator) {
         `exit if ok == false\n` ;
     };
 
+    Generator.pt_output = function (block) {
+        const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
+        const num_period = Generator.getFieldValue(block, 'num_period') || null;
+        return `#Pt100 出力(℃)\n` +
+        `ok = CA150_output_Pt100 (${num_main}${num_period}) # [0.1℃]\n` +
+        `exit if ok == false\n` ;
+    };
+
     return Generator;
 }
