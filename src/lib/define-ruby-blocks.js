@@ -726,6 +726,17 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.test_mode = {
+        init: function () {
+            this.jsonInit({
+                type: 'test_mode',
+                message0: 'テストモードへ投入する',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }

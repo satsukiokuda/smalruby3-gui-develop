@@ -996,6 +996,8 @@ const tester = function () {
         </block>
         <block type="set_clock">
         </block>
+        <block type="test_mode">
+        </block>
         </category>
         `;
 };

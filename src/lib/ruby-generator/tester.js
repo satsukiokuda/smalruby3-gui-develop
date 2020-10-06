@@ -67,5 +67,11 @@ export default function (Generator) {
         `exit if ok == false\n`;
     };
 
+    Generator.test_mode = function (block) {
+        return `#テストへ投入する\n` +
+        `ok = ramdump_write(FLG_MAIN KEY, 2)\n` +
+        `exit if ok == false\n`;
+    };
+
     return Generator;
 }
