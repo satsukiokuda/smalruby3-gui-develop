@@ -766,6 +766,29 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.test_result = {
+        init: function () {
+            this.jsonInit({
+                type: 'test_result',
+                message0: 'テスト結果%1?',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'test_result',
+                        options: [
+                            ['待機中', 'RESULT_WAIT'],
+                            ['実行中', 'RESULT_DOING'],
+                            ['OK', 'RESULT_OK'],
+                            ['NG', 'RESULT_NG']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }

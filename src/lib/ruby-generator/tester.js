@@ -80,5 +80,14 @@ export default function (Generator) {
         `exit if ok == false\n`;
     };
 
+    Generator.test_result = function (block) {
+        const test_result = Generator.getFieldValue(block, 'test_result') || null;
+        return `#テスト結果${test_result}?\n` +
+        `ok, result = ramdump_read(TEST_RESULT)\n` +
+        `exit if ok == false\n` +
+        `exit if result != ${test_result}\n`;
+    };
+    
+
     return Generator;
 }
