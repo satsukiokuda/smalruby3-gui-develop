@@ -1,8 +1,8 @@
 /**
- * Define Tester code generator for Ruby Blocks
- * @param {RubyGenerator} Generator The RubyGenerator
- * @return {RubyGenerator} same as param.
- */
+ * * Define Tester code generator for Ruby Blocks
+ * * @param {RubyGenerator} Generator The RubyGenerator
+ * * @return {RubyGenerator} same as param.
+ * */
 export default function (Generator) {
     const getUnquoteText = function (block, fieldName, order) {
         const input = block.inputs[fieldName];
@@ -14,12 +14,12 @@ export default function (Generator) {
         }
         return Generator.valueToCode(block, fieldName, order);
     };
-
+    
     Generator.init_figure_number = function (block) {
         const figure_number = getUnquoteText(block, 'figure_number', Generator.ORDER_NONE);
         return `require "./${figure_number}.rb"\n`;
     };
-
+    
     Generator.measure_range_check = function (block) {
         const measure = Generator.getFieldValue(block, 'measure') || null;
         const range_first = getUnquoteText(block, 'range_first', Generator.ORDER_NONE);
@@ -30,7 +30,7 @@ export default function (Generator) {
         `exit if ok == false\n` +
         `exit if (value < ${range_first}) or (value > ${range_last})\n`;
     };
-
+    
     Generator.choose_number = function (block) {
         const choose_number = getUnquoteText(block, 'choose_number', Generator.ORDER_NONE);
         return `#テスト番号${choose_number}を選択する\n` +
@@ -39,14 +39,14 @@ export default function (Generator) {
         `ok = ramdump_write(DUMP_KEY, KEY_SET)\n` +
         `exit if ok == false\n`;
     };
-
+    
     Generator.choose_item = function (block) {
         const choose_item = getUnquoteText(block, 'choose_item', Generator.ORDER_NONE);
         return `#テスト内項目${choose_item}へ\n` +
         `ok = ramdump_write(TEST_SUB, ${choose_item})\n` +
         `exit if ok == false\n` ;
     };
-
+    
     Generator.set_clock = function (block) {
         return `#時計合わせ\n` +
         `nowTime = DateTime.now\n` +
@@ -66,7 +66,7 @@ export default function (Generator) {
         `ok = ramdump_write(EDIT_CLK_MIN, minute)\n` +
         `exit if ok == false\n`;
     };
-
+    
     Generator.test_mode = function (block) {
         return `#テストへ投入する\n` +
         `ok = ramdump_write(FLG_MAIN KEY, 2)\n` +
@@ -163,7 +163,7 @@ export default function (Generator) {
         const num_period = Generator.getFieldValue(block, 'num_period') || null;
         return `#K 熱電対出力(℃)\n` +
         `ok = CA150_output_Kterm (${num_main}${num_period}) #[0.1℃]\n` +
-        `exit if ok == false\n` ;
+        `exit if ok == false\n`;
     };
 
     Generator.connection_off = function (block) {
@@ -176,7 +176,7 @@ export default function (Generator) {
         const channel = Generator.getFieldValue(block, 'channel') || null;
         return `#接続チャンネル ${channel}\n` +
         `ok = GPIB_output (CONNECT_CH${channel})\n` +
-        `exit if ok == false\n` ;
+        `exit if ok == false\n`;
     };
 
     return Generator;

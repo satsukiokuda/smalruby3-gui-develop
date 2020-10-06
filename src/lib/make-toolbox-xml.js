@@ -1174,7 +1174,7 @@ const makeToolboxXML = function (isStage, targetId, categoriesXML) {
         operators(isStage, targetId), gap,
         variables(isStage, targetId), gap,
         myBlocks(isStage, targetId), gap,
-        ruby(isStage, targetId),gap,
+        ruby(isStage, targetId), gap,
         tester(isStage, targetId)
     ];
 
