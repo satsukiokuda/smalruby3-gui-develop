@@ -166,5 +166,11 @@ export default function (Generator) {
         `exit if ok == false\n` ;
     };
 
+    Generator.connection_off = function (block) {
+        return `#接続をOFFにする\n` +
+        `ok = GPIB_OFF ()\n` +
+        `exit if ok == false\n`;
+    };
+
     return Generator;
 }

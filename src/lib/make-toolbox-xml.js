@@ -1138,6 +1138,8 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
+        <block type="connection_off">
+        </block>
         </category>
         `;
 };

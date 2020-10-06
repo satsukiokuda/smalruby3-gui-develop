@@ -1177,6 +1177,17 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.connection_off = {
+        init: function () {
+            this.jsonInit({
+                type: 'connection_off',
+                message0: '接続をOFFにする',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }
