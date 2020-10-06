@@ -998,6 +998,13 @@ const tester = function () {
         </block>
         <block type="test_mode">
         </block>
+        <block type="key_push">
+            <value name="key_push">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
         </category>
         `;
 };

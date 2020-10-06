@@ -73,5 +73,12 @@ export default function (Generator) {
         `exit if ok == false\n`;
     };
 
+    Generator.key_push = function (block) {
+        const key_push = Generator.getFieldValue(block, 'key_push') || null;
+        return `#${key_push}キーを押す\n` +
+        `ok = ramdump_write(DUMP_KEY, ${key_push})\n` +
+        `exit if ok == false\n`;
+    };
+
     return Generator;
 }
