@@ -971,12 +971,12 @@ const tester = function () {
             </value>
             <value name="range_first">
                 <shadow type="math_number">
-                    <field name="NUM"></field>
+                    <field name="NUM">0</field>
                 </shadow>
             </value>
             <value name="range_last">
                 <shadow type="math_number">
-                    <field name="NUM"></field>
+                    <field name="NUM">0</field>
                 </shadow>
             </value>
         </block>
