@@ -47,5 +47,25 @@ export default function (Generator) {
         `exit if ok == false\n` ;
     };
 
+    Generator.set_clock = function (block) {
+        return `#時計合わせ\n` +
+        `nowTime = DateTime.now\n` +
+        `year = nowTime.year.to_i - 2000 # scale for ClockIC\n` +
+        `month = nowTime.month.to_i\n` +
+        `day = nowTime.day.to_i\n` +
+        `hour = nowTime.hour.to_i\n` +
+        `minute = nowTime.minute.to_i\n` +
+        `ok = ramdump_write(EDIT_CLK_YEAR, year)\n` +
+        `exit if ok == false\n` +
+        `ok = ramdump_write(EDIT_CLK_MONTH, month)\n` +
+        `exit if ok == false\n` +
+        `ok = ramdump_write(EDIT_CLK_DAY, day\n` +
+        `exit if ok == false\n` +
+        `ok = ramdump_write(EDIT_CLK_HOUT, hour)\n` +
+        `exit if ok == false\n` +
+        `ok = ramdump_write(EDIT_CLK_MIN, minute)\n` +
+        `exit if ok == false\n`;
+    };
+
     return Generator;
 }

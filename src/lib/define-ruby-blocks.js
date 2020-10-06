@@ -715,6 +715,17 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.set_clock = {
+        init: function () {
+            this.jsonInit({
+                type: 'set_clock',
+                message0: '時計合わせを行う',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }
