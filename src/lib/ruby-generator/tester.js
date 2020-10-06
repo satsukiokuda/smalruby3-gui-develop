@@ -112,5 +112,15 @@ export default function (Generator) {
         `exit if ok == false\n` ;
     };
 
+    Generator.voltage_output = function (block) {
+        const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
+        const num_period_1 = Generator.getFieldValue(block, 'num_period_1') || null;
+        const num_period_2 = Generator.getFieldValue(block, 'num_period_2') || null;
+        const num_period_3 = Generator.getFieldValue(block, 'num_period_3') || null;
+        return `#電圧出力(mV)\n` +
+        `ok = CA150_output_mV (${num_main}${num_period_1}${num_period_2}${num_period_3}) # [0.001 mV]\n` +
+        `exit if ok == false\n` ;
+    };
+
     return Generator;
 }
