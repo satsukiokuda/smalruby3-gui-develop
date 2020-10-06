@@ -33,11 +33,18 @@ export default function (Generator) {
 
     Generator.choose_number = function (block) {
         const choose_number = getUnquoteText(block, 'choose_number', Generator.ORDER_NONE);
-        return `# テスト番号${choose_number}を選択する\n` +
+        return `#テスト番号${choose_number}を選択する\n` +
         `ok = ramdump_write(TEST_NO, TEST_${choose_number})\n` +
         `exit if ok == false\n` +
         `ok = ramdump_write(DUMP_KEY, KEY_SET)\n` +
         `exit if ok == false\n`;
+    };
+
+    Generator.choose_item = function (block) {
+        const choose_item = getUnquoteText(block, 'choose_item', Generator.ORDER_NONE);
+        return `#テスト内項目${choose_item}へ\n` +
+        `ok = ramdump_write(TEST_SUB, ${choose_item})\n` +
+        `exit if ok == false\n` ;
     };
 
     return Generator;

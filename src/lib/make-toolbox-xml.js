@@ -987,6 +987,13 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
+        <block type="choose_item">
+            <value name="choose_item">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
         </category>
         `;
 };
