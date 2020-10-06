@@ -954,8 +954,15 @@ const tester = function () {
     <category
         name="%{BKY_CATEGORY_TESTER}"
         id="tester"
-        colour="#CC0043"
-        secondaryColour="#FF4D6A">
+        colour="#1E90FF"
+        secondaryColour="#0000FF">
+        <block type="init_figure_number">
+            <value name="figure_number">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
         </category>
         `;
 };

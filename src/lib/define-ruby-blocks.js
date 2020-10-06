@@ -20,9 +20,9 @@ export default function (ScratchBlocks) {
     };
     ScratchBlocks.Categories[name2] = name2;
     ScratchBlocks.Colours[name2] = {
-        primary: '#CC0043',
-        secondary: '#DB4D7B',
-        tertiary: '#7A0028'
+        primary: '#1E90FF',
+        secondary: '#0000FF',
+        tertiary: '#6495ED'
     };
     ScratchBlocks.Extensions.register(
         `colours_${name}`,
@@ -33,6 +33,7 @@ export default function (ScratchBlocks) {
         ScratchBlocks.ScratchBlocks.VerticalExtensions.colourHelper(name2)
     );
 
+    ////////////////////Ruby Blocks//////////////////////
     ScratchBlocks.Blocks.ruby_statement = {
         init: function () {
             this.jsonInit({
@@ -624,6 +625,25 @@ export default function (ScratchBlocks) {
             });
         }
     };
+
+    /////////////////////////tester Blocks/////////////////////////////
+    ScratchBlocks.Blocks.init_figure_number = {
+        init: function () {
+            this.jsonInit({
+                type: 'init_figure_number',
+                message0: '図番:%1',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'figure_number'
+                    },
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }
