@@ -1026,6 +1026,28 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
+        <block type="resistance_output_k">
+            <value name="num_main">
+                <shadow type="text">
+                    <field name="TEXT">1</field>
+                </shadow>
+            </value>
+            <value name="num_period_1">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="num_period_2">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="num_period_3">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+        </block>
         </category>
         `;
 };

@@ -102,5 +102,15 @@ export default function (Generator) {
         `exit if ok == false\n` ;
     };
 
+    Generator.resistance_output_k = function (block) {
+        const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
+        const num_period_1 = Generator.getFieldValue(block, 'num_period_1') || null;
+        const num_period_2 = Generator.getFieldValue(block, 'num_period_2') || null;
+        const num_period_3 = Generator.getFieldValue(block, 'num_period_3') || null;
+        return `#抵抗出力(ohm)\n` +
+        `ok = CA150_output_registor(${num_main}${num_period_1}${num_period_2}${num_period_3}0) #[0.1 ohm]\n` +
+        `exit if ok == false\n` ;
+    };
+
     return Generator;
 }

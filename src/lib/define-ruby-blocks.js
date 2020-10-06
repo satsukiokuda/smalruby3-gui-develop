@@ -834,6 +834,72 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.resistance_output_k = {
+        init: function () {
+            this.jsonInit({
+                type: 'resistance_output_k',
+                message0: '抵抗出力%1.%2%3%4kΩ',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'num_main'
+
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_1',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_2',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_3',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }
