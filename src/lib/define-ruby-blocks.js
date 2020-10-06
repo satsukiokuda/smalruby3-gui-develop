@@ -644,6 +644,43 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.measure_range_check = {
+        init: function () {
+            this.jsonInit({
+                type: 'measure_range_check',
+                message0: '測定値%1が%2～%3',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'measure',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'range_first'
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'range_last'
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }

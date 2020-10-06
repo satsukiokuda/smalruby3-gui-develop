@@ -20,5 +20,16 @@ export default function (Generator) {
         return `require "./${figure_number}.rb"\n`;
     };
 
+    Generator.measure_range_check = function (block) {
+        const measure = Generator.getFieldValue(block, 'measure') || null;
+        const range_first = getUnquoteText(block, 'range_first', Generator.ORDER_NONE);
+        const range_last = getUnquoteText(block, 'range_last', Generator.ORDER_NONE);
+        return `#測定値範囲チェック(ohm)\n` +
+        `ok, value = ramdump_read(VALUE_${measure})\n` +
+        `puts sprintf(“VALUE_${measure}:%d”, value)\n` +
+        `exit if ok == false\n` +
+        `exit if (value < ${range_first}) or (value > ${range_last})\n`;
+    };
+
     return Generator;
 }

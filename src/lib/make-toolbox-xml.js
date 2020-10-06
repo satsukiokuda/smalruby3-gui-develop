@@ -963,6 +963,23 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
+        <block type="measure_range_check">
+            <value name="figure_number">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="range_first">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="range_last">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+        </block>
         </category>
         `;
 };
