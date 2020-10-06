@@ -681,6 +681,23 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.choose_number = {
+        init: function () {
+            this.jsonInit({
+                type: 'choose_number',
+                message0: 'テスト番号%1へ',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'choose_number'
+                    },
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }
