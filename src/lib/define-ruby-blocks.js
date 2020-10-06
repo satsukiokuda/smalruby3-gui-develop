@@ -804,7 +804,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'resistance_output',
-                message0: '抵抗出力%1.%2Ω?',
+                message0: '抵抗出力%1.%2Ω',
                 args0: [
                     {
                         type: 'input_value',
