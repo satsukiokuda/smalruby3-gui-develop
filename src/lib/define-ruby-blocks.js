@@ -789,6 +789,51 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.load_output_off = {
+        init: function () {
+            this.jsonInit({
+                type: 'load_output_off',
+                message0: '疑似負荷出力OFF',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.resistance_output = {
+        init: function () {
+            this.jsonInit({
+                type: 'resistance_output',
+                message0: '抵抗出力%1.%2Ω?',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'num_main'
+
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }

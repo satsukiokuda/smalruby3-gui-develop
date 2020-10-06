@@ -87,7 +87,20 @@ export default function (Generator) {
         `exit if ok == false\n` +
         `exit if result != ${test_result}\n`;
     };
+
+    Generator.load_output_off = function (block) {
+        return `#疑似負荷出力OFF\n` +
+        `ok = CA150_output_OFF()\n` +
+        `exit if ok == false\n`;
+    };
     
+    Generator.resistance_output = function (block) {
+        const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
+        const num_period = Generator.getFieldValue(block, 'num_period') || null;
+        return `#抵抗出力(ohm)\n` +
+        `ok = CA150_output_registor(${num_main}${num_period}) #[0.1 ohm]\n` +
+        `exit if ok == false\n` ;
+    };
 
     return Generator;
 }
