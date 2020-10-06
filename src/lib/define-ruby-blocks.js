@@ -1143,6 +1143,40 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.k_output = {
+        init: function () {
+            this.jsonInit({
+                type: 'k_output',
+                message0: 'K熱電対出力%1.%2℃',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'num_main'
+
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }
