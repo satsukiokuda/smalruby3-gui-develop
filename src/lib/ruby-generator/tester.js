@@ -112,14 +112,32 @@ export default function (Generator) {
         `exit if ok == false\n` ;
     };
 
-    Generator.voltage_output = function (block) {
+    Generator.voltage_output_m = function (block) {
         const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
         const num_period_1 = Generator.getFieldValue(block, 'num_period_1') || null;
         const num_period_2 = Generator.getFieldValue(block, 'num_period_2') || null;
         const num_period_3 = Generator.getFieldValue(block, 'num_period_3') || null;
         return `#電圧出力(mV)\n` +
-        `ok = CA150_output_mV (${num_main}${num_period_1}${num_period_2}${num_period_3}) # [0.001 mV]\n` +
+        `ok = CA150_output_mV (${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001 mV]\n` +
         `exit if ok == false\n` ;
+    };
+
+    Generator.voltage_output = function (block) {
+        const num_main = Generator.getFieldValue(block, 'num_main') || null;
+        const num_period_1 = Generator.getFieldValue(block, 'num_period_1') || null;
+        const num_period_2 = Generator.getFieldValue(block, 'num_period_2') || null;
+        const num_period_3 = Generator.getFieldValue(block, 'num_period_3') || null;
+        if (num_main == 0) {
+            return `#電圧出力(V)\n` +
+            `ok = CA150_output_V (${num_period_1}${num_period_2}${num_period_3}) #[0.001 V]\n` +
+            `exit if ok == false\n` ;
+        }
+        else {
+            return `#電圧出力(V)\n` +
+            `ok = CA150_output_V (${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001 V]\n` +
+            `exit if ok == false\n` ;
+        }
+        
     };
 
     return Generator;
