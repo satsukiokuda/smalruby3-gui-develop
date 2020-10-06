@@ -1188,6 +1188,35 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.connection_change = {
+        init: function () {
+            this.jsonInit({
+                type: 'connection_change',
+                message0: '接続をチャンネル%1に切り替える',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'channel',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }

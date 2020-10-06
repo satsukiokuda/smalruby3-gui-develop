@@ -172,5 +172,12 @@ export default function (Generator) {
         `exit if ok == false\n`;
     };
 
+    Generator.connection_change = function (block) {
+        const channel = Generator.getFieldValue(block, 'channel') || null;
+        return `#接続チャンネル ${channel}\n` +
+        `ok = GPIB_output (CONNECT_CH${channel})\n` +
+        `exit if ok == false\n` ;
+    };
+
     return Generator;
 }

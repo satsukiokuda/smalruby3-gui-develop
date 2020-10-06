@@ -1140,6 +1140,13 @@ const tester = function () {
         </block>
         <block type="connection_off">
         </block>
+        <block type="connection_change">
+            <value name="channel">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+        </block>
         </category>
         `;
 };
