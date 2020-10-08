@@ -17,7 +17,8 @@ export default function (Generator) {
     
     Generator.init_figure_number = function (block) {
         const figure_number = getUnquoteText(block, 'figure_number', Generator.ORDER_NONE);
-        return `require "./${figure_number}.rb"\n`;
+        return `require "./${figure_number}.rb"\n` + 
+        `\n`;
     };
     
     Generator.measure_range_check = function (block) {
@@ -28,7 +29,8 @@ export default function (Generator) {
         `ok, value = ramdump_read(VALUE_${measure})\n` +
         `puts sprintf(“VALUE_${measure}:%d”, value)\n` +
         `exit if ok == false\n` +
-        `exit if (value < ${range_first}) or (value > ${range_last})\n`;
+        `exit if (value < ${range_first}) or (value > ${range_last})\n` +
+        `\n`;
     };
     
     Generator.choose_number = function (block) {
@@ -37,14 +39,16 @@ export default function (Generator) {
         `ok = ramdump_write(TEST_NO, TEST_${choose_number})\n` +
         `exit if ok == false\n` +
         `ok = ramdump_write(DUMP_KEY, KEY_SET)\n` +
-        `exit if ok == false\n`;
+        `exit if ok == false\n` +
+        `\n`;
     };
     
     Generator.choose_item = function (block) {
         const choose_item = getUnquoteText(block, 'choose_item', Generator.ORDER_NONE);
         return `#テスト内項目${choose_item}へ\n` +
         `ok = ramdump_write(TEST_SUB, ${choose_item})\n` +
-        `exit if ok == false\n` ;
+        `exit if ok == false\n` +
+        `\n`;
     };
     
     Generator.set_clock = function (block) {
@@ -64,20 +68,23 @@ export default function (Generator) {
         `ok = ramdump_write(EDIT_CLK_HOUT, hour)\n` +
         `exit if ok == false\n` +
         `ok = ramdump_write(EDIT_CLK_MIN, minute)\n` +
-        `exit if ok == false\n`;
+        `exit if ok == false\n` +
+        `\n`;
     };
     
     Generator.test_mode = function (block) {
         return `#テストへ投入する\n` +
         `ok = ramdump_write(FLG_MAIN KEY, 2)\n` +
-        `exit if ok == false\n`;
+        `exit if ok == false\n` +
+        `\n`;
     };
 
     Generator.key_push = function (block) {
         const key_push = Generator.getFieldValue(block, 'key_push') || null;
         return `#${key_push}キーを押す\n` +
         `ok = ramdump_write(DUMP_KEY, ${key_push})\n` +
-        `exit if ok == false\n`;
+        `exit if ok == false\n` +
+        `\n`;
     };
 
     Generator.test_result = function (block) {
@@ -85,13 +92,15 @@ export default function (Generator) {
         return `#テスト結果${test_result}?\n` +
         `ok, result = ramdump_read(TEST_RESULT)\n` +
         `exit if ok == false\n` +
-        `exit if result != ${test_result}\n`;
+        `exit if result != ${test_result}\n` +
+        `\n`;
     };
 
     Generator.load_output_off = function (block) {
         return `#疑似負荷出力OFF\n` +
         `ok = CA150_output_OFF()\n` +
-        `exit if ok == false\n`;
+        `exit if ok == false\n` +
+        `\n`;
     };
     
     Generator.resistance_output = function (block) {
@@ -99,7 +108,8 @@ export default function (Generator) {
         const num_period = Generator.getFieldValue(block, 'num_period') || null;
         return `#抵抗出力(ohm)\n` +
         `ok = CA150_output_registor(${num_main}${num_period}) #[0.1 ohm]\n` +
-        `exit if ok == false\n` ;
+        `exit if ok == false\n` +
+        `\n`;
     };
 
     Generator.resistance_output_k = function (block) {
@@ -109,7 +119,8 @@ export default function (Generator) {
         const num_period_3 = Generator.getFieldValue(block, 'num_period_3') || null;
         return `#抵抗出力(ohm)\n` +
         `ok = CA150_output_registor(${num_main}${num_period_1}${num_period_2}${num_period_3}0) #[0.1 ohm]\n` +
-        `exit if ok == false\n` ;
+        `exit if ok == false\n` +
+        `\n`;
     };
 
     Generator.voltage_output_m = function (block) {
@@ -119,7 +130,8 @@ export default function (Generator) {
         const num_period_3 = Generator.getFieldValue(block, 'num_period_3') || null;
         return `#電圧出力(mV)\n` +
         `ok = CA150_output_mV (${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001 mV]\n` +
-        `exit if ok == false\n` ;
+        `exit if ok == false\n` +
+        `\n`;
     };
 
     Generator.voltage_output = function (block) {
@@ -130,12 +142,14 @@ export default function (Generator) {
         if (num_main == 0) {
             return `#電圧出力(V)\n` +
             `ok = CA150_output_V (${num_period_1}${num_period_2}${num_period_3}) #[0.001 V]\n` +
-            `exit if ok == false\n` ;
+            `exit if ok == false\n` +
+            `\n`;
         }
         else {
             return `#電圧出力(V)\n` +
             `ok = CA150_output_V (${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001 V]\n` +
-            `exit if ok == false\n` ;
+            `exit if ok == false\n` +
+            `\n`;
         }
         
     };
@@ -147,7 +161,8 @@ export default function (Generator) {
         const num_period_3 = Generator.getFieldValue(block, 'num_period_3') || null;
         return `#電流出力(mA)\n` +
         `ok = CA150_output_ampare(${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001mA]\n` +
-        `exit if ok == false\n` ;
+        `exit if ok == false\n` +
+        `\n`;
     };
 
     Generator.pt_output = function (block) {
@@ -155,7 +170,8 @@ export default function (Generator) {
         const num_period = Generator.getFieldValue(block, 'num_period') || null;
         return `#Pt100 出力(℃)\n` +
         `ok = CA150_output_Pt100 (${num_main}${num_period}) #[0.1℃]\n` +
-        `exit if ok == false\n` ;
+        `exit if ok == false\n` +
+        `\n`;
     };
 
     Generator.k_output = function (block) {
@@ -163,20 +179,23 @@ export default function (Generator) {
         const num_period = Generator.getFieldValue(block, 'num_period') || null;
         return `#K 熱電対出力(℃)\n` +
         `ok = CA150_output_Kterm (${num_main}${num_period}) #[0.1℃]\n` +
-        `exit if ok == false\n`;
+        `exit if ok == false\n` +
+        `\n`;
     };
 
     Generator.connection_off = function (block) {
         return `#接続をOFFにする\n` +
         `ok = GPIB_OFF ()\n` +
-        `exit if ok == false\n`;
+        `exit if ok == false\n` +
+        `\n`;
     };
 
     Generator.connection_change = function (block) {
         const channel = Generator.getFieldValue(block, 'channel') || null;
         return `#接続チャンネル ${channel}\n` +
         `ok = GPIB_output (CONNECT_CH${channel})\n` +
-        `exit if ok == false\n`;
+        `exit if ok == false\n` +
+        `\n`;
     };
 
     return Generator;
