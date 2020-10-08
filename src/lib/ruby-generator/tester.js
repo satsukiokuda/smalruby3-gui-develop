@@ -129,7 +129,7 @@ export default function (Generator) {
         const num_period_2 = Generator.getFieldValue(block, 'num_period_2') || null;
         const num_period_3 = Generator.getFieldValue(block, 'num_period_3') || null;
         return `#電圧出力(mV)\n` +
-        `ok = CA150_output_mV (${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001 mV]\n` +
+        `ok = CA150_output_mV(${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001 mV]\n` +
         `exit if ok == false\n` +
         `\n`;
     };
@@ -141,13 +141,13 @@ export default function (Generator) {
         const num_period_3 = Generator.getFieldValue(block, 'num_period_3') || null;
         if (num_main == 0) {
             return `#電圧出力(V)\n` +
-            `ok = CA150_output_V (${num_period_1}${num_period_2}${num_period_3}) #[0.001 V]\n` +
+            `ok = CA150_output_V(${num_period_1}${num_period_2}${num_period_3}) #[0.001 V]\n` +
             `exit if ok == false\n` +
             `\n`;
         }
         else {
             return `#電圧出力(V)\n` +
-            `ok = CA150_output_V (${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001 V]\n` +
+            `ok = CA150_output_V(${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001 V]\n` +
             `exit if ok == false\n` +
             `\n`;
         }
@@ -169,7 +169,7 @@ export default function (Generator) {
         const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
         const num_period = Generator.getFieldValue(block, 'num_period') || null;
         return `#Pt100 出力(℃)\n` +
-        `ok = CA150_output_Pt100 (${num_main}${num_period}) #[0.1℃]\n` +
+        `ok = CA150_output_Pt100(${num_main}${num_period}) #[0.1℃]\n` +
         `exit if ok == false\n` +
         `\n`;
     };
@@ -178,14 +178,14 @@ export default function (Generator) {
         const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
         const num_period = Generator.getFieldValue(block, 'num_period') || null;
         return `#K 熱電対出力(℃)\n` +
-        `ok = CA150_output_Kterm (${num_main}${num_period}) #[0.1℃]\n` +
+        `ok = CA150_output_Kterm(${num_main}${num_period}) #[0.1℃]\n` +
         `exit if ok == false\n` +
         `\n`;
     };
 
     Generator.connection_off = function (block) {
         return `#接続をOFFにする\n` +
-        `ok = GPIB_OFF ()\n` +
+        `ok = GPIB_OFF()\n` +
         `exit if ok == false\n` +
         `\n`;
     };
@@ -193,7 +193,7 @@ export default function (Generator) {
     Generator.connection_change = function (block) {
         const channel = Generator.getFieldValue(block, 'channel') || null;
         return `#接続チャンネル ${channel}\n` +
-        `ok = GPIB_output (CONNECT_CH${channel})\n` +
+        `ok = GPIB_output(CONNECT_CH${channel})\n` +
         `exit if ok == false\n` +
         `\n`;
     };
