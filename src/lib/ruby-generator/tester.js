@@ -198,5 +198,10 @@ export default function (Generator) {
         `\n`;
     };
 
+    Generator.tester_test_result = function (block) {
+        const test_result = Generator.valueToCode(block, 'TEST_RESULT') || null;
+        return `say(${test_result})\n`;
+    };
+
     return Generator;
 }

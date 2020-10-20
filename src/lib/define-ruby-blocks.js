@@ -1217,6 +1217,23 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.tester_test_result = {
+        init: function () {
+            this.jsonInit({
+                type: 'test_result',
+                message0: '%1を表示',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'TEST_RESULT'
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }

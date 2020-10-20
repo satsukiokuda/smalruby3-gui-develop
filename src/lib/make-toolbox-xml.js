@@ -1147,6 +1147,13 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
+        <block type="tester_test_result">
+            <value name="TEST_RESULT">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
         </category>
         `;
 };
