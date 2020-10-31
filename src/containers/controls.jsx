@@ -8,6 +8,8 @@ import analytics from '../lib/analytics';
 import ControlsComponent from '../components/controls/controls.jsx';
 
 import RubyToBlocksConverterHOC from '../lib/ruby-to-blocks-converter-hoc.jsx';
+//import { ipcRenderer,shell } from 'electron';
+//const { ipcRenderer,shell } = require('electron');
 
 class Controls extends React.Component {
     constructor (props) {
@@ -35,6 +37,8 @@ class Controls extends React.Component {
                 category: 'general',
                 action: 'Green Flag'
             });
+            window.ipc.send('greenflag-click','Go');
+
         }
     }
     handleStopAllClick (e) {
