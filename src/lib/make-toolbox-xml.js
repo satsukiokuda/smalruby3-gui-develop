@@ -965,6 +965,7 @@ const tester = function () {
         </block>
         <block type="test_finish">
         </block>
+        ${blockSeparator}
         <block type="measure_range_check">
             <value name="figure_number">
                 <shadow type="math_number">
@@ -982,6 +983,7 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
+        ${blockSeparator}
         <block type="choose_number">
             <value name="choose_number">
                 <shadow type="text">
@@ -1014,6 +1016,7 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
+        ${blockSeparator}
         <block type="load_output_off">
         </block>
         <block type="resistance_output">
@@ -1140,6 +1143,7 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
+        ${blockSeparator}
         <block type="connection_off">
         </block>
         <block type="connection_change">
