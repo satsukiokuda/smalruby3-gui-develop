@@ -963,6 +963,8 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
+        <block type="test_finish">
+        </block>
         <block type="measure_range_check">
             <value name="figure_number">
                 <shadow type="math_number">

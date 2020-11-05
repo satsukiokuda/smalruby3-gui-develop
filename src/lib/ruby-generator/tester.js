@@ -20,6 +20,11 @@ export default function (Generator) {
         return `require "./${figure_number}.rb"\n` + 
         `\n`;
     };
+
+    Generator.test_finish = function (block) {
+        return `#テストを完了する\n` + `out_console_finish()\n` + `exit\n`  +
+        `\n`;
+    };
     
     Generator.measure_range_check = function (block) {
         const measure = Generator.getFieldValue(block, 'measure') || null;

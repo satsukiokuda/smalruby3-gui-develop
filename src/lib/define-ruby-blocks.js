@@ -644,6 +644,17 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.test_finish = {
+        init: function () {
+            this.jsonInit({
+                type: 'test_finish',
+                message0: 'テスト完了',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
     ScratchBlocks.Blocks.measure_range_check = {
         init: function () {
             this.jsonInit({
