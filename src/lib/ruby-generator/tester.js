@@ -32,8 +32,11 @@ export default function (Generator) {
         const range_last = getUnquoteText(block, 'range_last', Generator.ORDER_NONE);
         return `#測定値範囲チェック(ohm)\n` +
         `ok, value = ramdump_read(VALUE_${measure})\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `puts sprintf("VALUE_${measure}:%d", value)\n` +
-        `exit if ok == false\n` +
         `exit if (value < ${range_first}) or (value > ${range_last})\n` +
         `\n`;
     };
@@ -42,9 +45,15 @@ export default function (Generator) {
         const choose_number = getUnquoteText(block, 'choose_number', Generator.ORDER_NONE);
         return `#テスト番号${choose_number}を選択する\n` +
         `ok = ramdump_write(TEST_NO, TEST_${choose_number})\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `ok = ramdump_write(DUMP_KEY, KEY_SET)\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `\n`;
     };
     
@@ -52,35 +61,58 @@ export default function (Generator) {
         const choose_item = getUnquoteText(block, 'choose_item', Generator.ORDER_NONE);
         return `#テスト内項目${choose_item}へ\n` +
         `ok = ramdump_write(TEST_SUB, ${choose_item})\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `\n`;
     };
     
     Generator.set_clock = function (block) {
         return `#時計合わせ\n` +
         `nowTime = DateTime.now\n` +
+        `\n` +
         `year = nowTime.year.to_i - 2000 # scale for ClockIC\n` +
         `month = nowTime.month.to_i\n` +
         `day = nowTime.day.to_i\n` +
         `hour = nowTime.hour.to_i\n` +
         `minute = nowTime.minute.to_i\n` +
+        `\n` +
         `ok = ramdump_write(EDIT_CLK_YEAR, year)\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `ok = ramdump_write(EDIT_CLK_MONTH, month)\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `ok = ramdump_write(EDIT_CLK_DAY, day)\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `ok = ramdump_write(EDIT_CLK_HOUR, hour)\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `ok = ramdump_write(EDIT_CLK_MIN, minute)\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `\n`;
     };
     
     Generator.test_mode = function (block) {
         return `#テストへ投入する\n` +
         `ok = ramdump_write(FLG_MAIN, 2)\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `\n`;
     };
 
@@ -88,7 +120,10 @@ export default function (Generator) {
         const key_push = Generator.getFieldValue(block, 'key_push') || null;
         return `#${key_push}キーを押す\n` +
         `ok = ramdump_write(DUMP_KEY, ${key_push})\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `\n`;
     };
 
@@ -96,15 +131,24 @@ export default function (Generator) {
         const test_result = Generator.getFieldValue(block, 'test_result') || null;
         return `#テスト結果${test_result}?\n` +
         `ok, result = ramdump_read(TEST_RESULT)\n` +
-        `exit if ok == false\n` +
-        `exit if result != ${test_result}\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
+        `if result != ${test_result} then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `\n`;
     };
 
     Generator.load_output_off = function (block) {
         return `#疑似負荷出力OFF\n` +
         `ok = CA150_output_OFF()\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `\n`;
     };
     
@@ -114,13 +158,19 @@ export default function (Generator) {
         if (num_main == 0) {
             return `#抵抗出力(ohm)\n` +
             `ok = CA150_output_registor(${num_period}) #[0.1 ohm]\n` +
-            `exit if ok == false\n` +
+            `if ok == false then\n` +
+            `   out_console_exit(__FILE__,__LINE__)\n` +
+            `   exit\n` +
+            `end\n` +
             `\n`;
         }
         else {
             return `#抵抗出力(ohm)\n` +
             `ok = CA150_output_registor(${num_main}${num_period}) #[0.1 ohm]\n` +
-            `exit if ok == false\n` +
+            `if ok == false then\n` +
+            `   out_console_exit(__FILE__,__LINE__)\n` +
+            `   exit\n` +
+            `end\n` +
             `\n`;
         }
     };
@@ -135,27 +185,39 @@ export default function (Generator) {
                 if (num_period_2 == 0) {
                     return `#抵抗出力(ohm)\n` +
                     `ok = CA150_output_registor(${num_period_3}0) #[0.1 ohm]\n` +
-                    `exit if ok == false\n` +
+                    `if ok == false then\n` +
+                    `   out_console_exit(__FILE__,__LINE__)\n` +
+                    `   exit\n` +
+                    `end\n` +
                     `\n`;
                 }
                 else {
                     return `#抵抗出力(ohm)\n` +
                     `ok = CA150_output_registor(${num_period_2}${num_period_3}0) #[0.1 ohm]\n` +
-                    `exit if ok == false\n` +
+                    `if ok == false then\n` +
+                    `   out_console_exit(__FILE__,__LINE__)\n` +
+                    `   exit\n` +
+                    `end\n` +
                     `\n`;
                 }  
             }
             else {
                 return `#抵抗出力(ohm)\n` +
                 `ok = CA150_output_registor(${num_period_1}${num_period_2}${num_period_3}0) #[0.1 ohm]\n` +
-                `exit if ok == false\n` +
+                `if ok == false then\n` +
+                `   out_console_exit(__FILE__,__LINE__)\n` +
+                `   exit\n` +
+                `end\n` +
                 `\n`;
             }
         }
         else {
             return `#抵抗出力(ohm)\n` +
             `ok = CA150_output_registor(${num_main}${num_period_1}${num_period_2}${num_period_3}0) #[0.1 ohm]\n` +
-            `exit if ok == false\n` +
+            `if ok == false then\n` +
+            `   out_console_exit(__FILE__,__LINE__)\n` +
+            `   exit\n` +
+            `end\n` +
             `\n`;
         }
     };
@@ -170,27 +232,39 @@ export default function (Generator) {
                 if (num_period_2 == 0) {
                     return `#電圧出力(mV)\n` +
                     `ok = CA150_output_mV(${num_period_3}) #[0.001 mV]\n` +
-                    `exit if ok == false\n` +
+                    `if ok == false then\n` +
+                    `   out_console_exit(__FILE__,__LINE__)\n` +
+                    `   exit\n` +
+                    `end\n` +
                     `\n`;
                 }
                 else {
                     return `#電圧出力(mV)\n` +
                     `ok = CA150_output_mV(${num_period_2}${num_period_3}) #[0.001 mV]\n` +
-                    `exit if ok == false\n` +
+                    `if ok == false then\n` +
+                    `   out_console_exit(__FILE__,__LINE__)\n` +
+                    `   exit\n` +
+                    `end\n` +
                     `\n`;
                 }
             }
             else {
                 return `#電圧出力(mV)\n` +
                 `ok = CA150_output_mV(${num_period_1}${num_period_2}${num_period_3}) #[0.001 mV]\n` +
-                `exit if ok == false\n` +
+                `if ok == false then\n` +
+                `   out_console_exit(__FILE__,__LINE__)\n` +
+                `   exit\n` +
+                `end\n` +
                 `\n`;
             }
         }
         else {
             return `#電圧出力(mV)\n` +
             `ok = CA150_output_mV(${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001 mV]\n` +
-            `exit if ok == false\n` +
+            `if ok == false then\n` +
+            `   out_console_exit(__FILE__,__LINE__)\n` +
+            `   exit\n` +
+            `end\n` +
             `\n`;
         }
     };
@@ -205,27 +279,39 @@ export default function (Generator) {
                 if (num_period_2 == 0) {
                     return `#電圧出力(V)\n` +
                     `ok = CA150_output_V(${num_period_3}) #[0.001 V]\n` +
-                    `exit if ok == false\n` +
+                    `if ok == false then\n` +
+                    `   out_console_exit(__FILE__,__LINE__)\n` +
+                    `   exit\n` +
+                    `end\n` +
                     `\n`;
                 }
                 else {
                     return `#電圧出力(V)\n` +
                     `ok = CA150_output_V(${num_period_2}${num_period_3}) #[0.001 V]\n` +
-                    `exit if ok == false\n` +
+                    `if ok == false then\n` +
+                    `   out_console_exit(__FILE__,__LINE__)\n` +
+                    `   exit\n` +
+                    `end\n` +
                     `\n`;
                 }
             }
             else {
                 return `#電圧出力(V)\n` +
                 `ok = CA150_output_V(${num_period_1}${num_period_2}${num_period_3}) #[0.001 V]\n` +
-                `exit if ok == false\n` +
+                `if ok == false then\n` +
+                `   out_console_exit(__FILE__,__LINE__)\n` +
+                `   exit\n` +
+                `end\n` +
                 `\n`;
             }
         }
         else {
             return `#電圧出力(V)\n` +
             `ok = CA150_output_V(${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001 V]\n` +
-            `exit if ok == false\n` +
+            `if ok == false then\n` +
+            `   out_console_exit(__FILE__,__LINE__)\n` +
+            `   exit\n` +
+            `end\n` +
             `\n`;
         }
     };
@@ -240,27 +326,39 @@ export default function (Generator) {
                 if (num_period_2 == 0) {
                     return `#電流出力(mA)\n` +
                     `ok = CA150_output_ampare(${num_period_3}) #[0.001mA]\n` +
-                    `exit if ok == false\n` +
+                    `if ok == false then\n` +
+                    `   out_console_exit(__FILE__,__LINE__)\n` +
+                    `   exit\n` +
+                    `end\n` +
                     `\n`;
                 }
                 else {
                     return `#電流出力(mA)\n` +
                     `ok = CA150_output_ampare(${num_period_2}${num_period_3}) #[0.001mA]\n` +
-                    `exit if ok == false\n` +
+                    `if ok == false then\n` +
+                    `   out_console_exit(__FILE__,__LINE__)\n` +
+                    `   exit\n` +
+                    `end\n` +
                     `\n`;
                 }
             }
             else {
                 return `#電流出力(mA)\n` +
                 `ok = CA150_output_ampare(${num_period_1}${num_period_2}${num_period_3}) #[0.001mA]\n` +
-                `exit if ok == false\n` +
+                `if ok == false then\n` +
+                `   out_console_exit(__FILE__,__LINE__)\n` +
+                `   exit\n` +
+                `end\n` +
                 `\n`;
             }
         }
         else {
             return `#電流出力(mA)\n` +
             `ok = CA150_output_ampare(${num_main}${num_period_1}${num_period_2}${num_period_3}) #[0.001mA]\n` +
-            `exit if ok == false\n` +
+            `if ok == false then\n` +
+            `   out_console_exit(__FILE__,__LINE__)\n` +
+            `   exit\n` +
+            `end\n` +
             `\n`;
         }
     };
@@ -271,13 +369,19 @@ export default function (Generator) {
         if (num_main == 0) {
             return `#Pt100 出力(℃)\n` +
             `ok = CA150_output_Pt100(${num_period}) #[0.1℃]\n` +
-            `exit if ok == false\n` +
+            `if ok == false then\n` +
+            `   out_console_exit(__FILE__,__LINE__)\n` +
+            `   exit\n` +
+            `end\n` +
             `\n`;
         }
         else {
             return `#Pt100 出力(℃)\n` +
             `ok = CA150_output_Pt100(${num_main}${num_period}) #[0.1℃]\n` +
-            `exit if ok == false\n` +
+            `if ok == false then\n` +
+            `   out_console_exit(__FILE__,__LINE__)\n` +
+            `   exit\n` +
+            `end\n` +
             `\n`;
         } 
     };
@@ -288,13 +392,19 @@ export default function (Generator) {
         if (num_main == 0) {
             return `#Pt100 出力(℃)\n` +
             `ok = CA150_output_Pt100(${num_period}) #[0.1℃]\n` +
-            `exit if ok == false\n` +
+            `if ok == false then\n` +
+            `   out_console_exit(__FILE__,__LINE__)\n` +
+            `   exit\n` +
+            `end\n` +
             `\n`;
         }
         else {
             return `#K 熱電対出力(℃)\n` +
             `ok = CA150_output_Kterm(${num_main}${num_period}) #[0.1℃]\n` +
-            `exit if ok == false\n` +
+            `if ok == false then\n` +
+            `   out_console_exit(__FILE__,__LINE__)\n` +
+            `   exit\n` +
+            `end\n` +
             `\n`;
         } 
     };
@@ -302,7 +412,10 @@ export default function (Generator) {
     Generator.connection_off = function (block) {
         return `#接続をOFFにする\n` +
         `ok = GPIB_OFF()\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `\n`;
     };
 
@@ -310,7 +423,10 @@ export default function (Generator) {
         const channel = Generator.getFieldValue(block, 'channel') || null;
         return `#接続チャンネル ${channel}\n` +
         `ok = GPIB_output(CONNECT_CH${channel})\n` +
-        `exit if ok == false\n` +
+        `if ok == false then\n` +
+        `   out_console_exit(__FILE__,__LINE__)\n` +
+        `   exit\n` +
+        `end\n` +
         `\n`;
     };
 
