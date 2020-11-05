@@ -27,7 +27,7 @@ export default function (Generator) {
         const range_last = getUnquoteText(block, 'range_last', Generator.ORDER_NONE);
         return `#測定値範囲チェック(ohm)\n` +
         `ok, value = ramdump_read(VALUE_${measure})\n` +
-        `puts sprintf(“VALUE_${measure}:%d”, value)\n` +
+        `puts sprintf("VALUE_${measure}:%d", value)\n` +
         `exit if ok == false\n` +
         `exit if (value < ${range_first}) or (value > ${range_last})\n` +
         `\n`;
@@ -63,9 +63,9 @@ export default function (Generator) {
         `exit if ok == false\n` +
         `ok = ramdump_write(EDIT_CLK_MONTH, month)\n` +
         `exit if ok == false\n` +
-        `ok = ramdump_write(EDIT_CLK_DAY, day\n` +
+        `ok = ramdump_write(EDIT_CLK_DAY, day)\n` +
         `exit if ok == false\n` +
-        `ok = ramdump_write(EDIT_CLK_HOUT, hour)\n` +
+        `ok = ramdump_write(EDIT_CLK_HOUR, hour)\n` +
         `exit if ok == false\n` +
         `ok = ramdump_write(EDIT_CLK_MIN, minute)\n` +
         `exit if ok == false\n` +
@@ -74,7 +74,7 @@ export default function (Generator) {
     
     Generator.test_mode = function (block) {
         return `#テストへ投入する\n` +
-        `ok = ramdump_write(FLG_MAIN KEY, 2)\n` +
+        `ok = ramdump_write(FLG_MAIN, 2)\n` +
         `exit if ok == false\n` +
         `\n`;
     };
