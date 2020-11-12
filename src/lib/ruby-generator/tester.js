@@ -390,8 +390,8 @@ export default function (Generator) {
         const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
         const num_period = Generator.getFieldValue(block, 'num_period') || null;
         if (num_main == 0) {
-            return `#Pt100 出力(℃)\n` +
-            `ok = CA150_output_Pt100(${num_period}) #[0.1℃]\n` +
+            return `#K 熱電対出力(℃)\n` +
+            `ok = CA150_output_Kterm(${num_period}) #[0.1℃]\n` +
             `if ok == false then\n` +
             `   out_console_exit(__FILE__,__LINE__)\n` +
             `   exit\n` +
