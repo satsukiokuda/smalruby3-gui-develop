@@ -1183,6 +1183,8 @@ const testersecond = function () {
                 </shadow>
             </value>
         </block>
+        <block type="second_test_exit">
+        </block>
         ${blockSeparator}
         <block type="second_load_output_off">
         </block>

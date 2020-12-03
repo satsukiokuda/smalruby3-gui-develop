@@ -26,6 +26,11 @@ export default function (Generator) {
         `\n`;
     };
 
+    Generator.second_test_exit = function (block) {
+        return `out_console_exit(__FILE__,__LINE__)\n` + `exit\n`
+        ;
+    };
+
     Generator.second_load_output_off = function (block) {
         return `#疑似負荷出力OFF\n` +
         `ok = CA150_output_OFF()\n`

@@ -1277,6 +1277,17 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.second_test_exit = {
+        init: function () {
+            this.jsonInit({
+                type: 'test_exit',
+                message0: 'テストを終了させる',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
     ScratchBlocks.Blocks.second_load_output_off = {
         init: function () {
             this.jsonInit({
