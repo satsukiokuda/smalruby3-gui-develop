@@ -29,6 +29,12 @@ export default function (Generator) {
         ;
     };
 
+    Generator.second_test_mode = function (block) {
+        return `#テストモードへ投入する\n` +
+        `ok = ramdump_write(FLG_MAIN, 2)\n` 
+        ;
+    };
+
     Generator.second_test_exit = function (block) {
         return `out_console_exit(__FILE__,__LINE__)\n` + `exit\n`
         ;

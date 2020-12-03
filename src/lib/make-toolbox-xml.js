@@ -1190,6 +1190,8 @@ const testersecond = function () {
                 </shadow>
             </value>
         </block>
+        <block type="second_test_mode">
+        </block>
         <block type="second_test_exit">
         </block>
         ${blockSeparator}
