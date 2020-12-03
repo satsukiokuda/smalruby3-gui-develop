@@ -23,7 +23,7 @@ export default function (Generator) {
     Generator.control_if = function (block) {
         const operator = Generator.valueToCode(block, 'CONDITION', Generator.ORDER_NONE) || false;
         const branch = Generator.statementToCode(block, 'SUBSTACK') || '';
-        return `if ${operator}\n${branch}end\n`;
+        return `if ${operator} then\n${branch}end\n`;
     };
 
     Generator.control_if_else = function (block) {
