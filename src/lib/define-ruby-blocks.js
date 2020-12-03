@@ -1277,6 +1277,394 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.second_load_output_off = {
+        init: function () {
+            this.jsonInit({
+                type: 'load_output_off',
+                message0: '疑似負荷出力をOFFにする',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_resistance_output = {
+        init: function () {
+            this.jsonInit({
+                type: 'resistance_output',
+                message0: '抵抗出力%1.%2Ωを加える',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'num_main'
+
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_resistance_output_k = {
+        init: function () {
+            this.jsonInit({
+                type: 'resistance_output_k',
+                message0: '抵抗出力%1.%2%3%4kΩを加える',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'num_main'
+
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_1',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_2',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_3',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_voltage_output_m = {
+        init: function () {
+            this.jsonInit({
+                type: 'voltage_output_m',
+                message0: '電圧出力%1.%2%3%4mVを加える',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'num_main'
+
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_1',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_2',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_3',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_voltage_output = {
+        init: function () {
+            this.jsonInit({
+                type: 'voltage_output',
+                message0: '電圧出力%1.%2%3%4Vを加える',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_main',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_1',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_2',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_3',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_current_output_m = {
+        init: function () {
+            this.jsonInit({
+                type: 'current_output_m',
+                message0: '電流出力%1.%2%3%4mAを加える',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'num_main'
+
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_1',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_2',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period_3',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_pt_output = {
+        init: function () {
+            this.jsonInit({
+                type: 'pt_output',
+                message0: 'Pt100 出力%1.%2℃を加える',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'num_main'
+
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_k_output = {
+        init: function () {
+            this.jsonInit({
+                type: 'k_output',
+                message0: 'K熱電対出力%1.%2℃を加える',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'num_main'
+
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'num_period',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }

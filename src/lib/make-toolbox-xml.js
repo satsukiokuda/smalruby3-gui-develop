@@ -1183,6 +1183,133 @@ const testersecond = function () {
                 </shadow>
             </value>
         </block>
+        ${blockSeparator}
+        <block type="second_load_output_off">
+        </block>
+        <block type="second_resistance_output">
+            <value name="num_main">
+                <shadow type="text">
+                    <field name="TEXT">100</field>
+                </shadow>
+            </value>
+            <value name="num_period">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="second_resistance_output_k">
+            <value name="num_main">
+                <shadow type="text">
+                    <field name="TEXT">1</field>
+                </shadow>
+            </value>
+            <value name="num_period_1">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="num_period_2">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="num_period_3">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="second_voltage_output_m">
+            <value name="num_main">
+                <shadow type="text">
+                    <field name="TEXT">100</field>
+                </shadow>
+            </value>
+            <value name="num_period_1">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="num_period_2">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="num_period_3">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="second_voltage_output">
+            <value name="num_main">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="num_period_1">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="num_period_2">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="num_period_3">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="second_current_output_m">
+            <value name="num_main">
+                <shadow type="text">
+                    <field name="TEXT">4</field>
+                </shadow>
+            </value>
+            <value name="num_period_1">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="num_period_2">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="num_period_3">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="second_pt_output">
+            <value name="num_main">
+                <shadow type="text">
+                    <field name="TEXT">0</field>
+                </shadow>
+            </value>
+            <value name="num_period">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="second_k_output">
+            <value name="num_main">
+                <shadow type="text">
+                    <field name="TEXT">0</field>
+                </shadow>
+            </value>
+            <value name="num_period">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+        </block>
     </category>
     `;
 };
