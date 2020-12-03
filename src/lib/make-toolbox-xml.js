@@ -1183,6 +1183,13 @@ const testersecond = function () {
                 </shadow>
             </value>
         </block>
+        <block type="second_choose_item">
+            <value name="choose_item">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
         <block type="second_test_exit">
         </block>
         ${blockSeparator}

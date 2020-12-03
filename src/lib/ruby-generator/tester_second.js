@@ -26,6 +26,13 @@ export default function (Generator) {
         `\n`;
     };
 
+    Generator.second_choose_item = function (block) {
+        const choose_item = getUnquoteText(block, 'choose_item', Generator.ORDER_NONE);
+        return `#テスト内項目${choose_item}を選択する\n` +
+        `ok = ramdump_write(TEST_SUB, ${choose_item})\n`
+        ;
+    };
+
     Generator.second_test_exit = function (block) {
         return `out_console_exit(__FILE__,__LINE__)\n` + `exit\n`
         ;

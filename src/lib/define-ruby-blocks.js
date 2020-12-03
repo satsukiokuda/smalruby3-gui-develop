@@ -1277,6 +1277,23 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.second_choose_item = {
+        init: function () {
+            this.jsonInit({
+                type: 'choose_item',
+                message0: 'テスト内項目%1を選択',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'choose_item'
+                    },
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
     ScratchBlocks.Blocks.second_test_exit = {
         init: function () {
             this.jsonInit({
