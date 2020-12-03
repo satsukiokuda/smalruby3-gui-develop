@@ -200,4 +200,10 @@ export default function (Generator) {
             ;
         } 
     };
+
+    Generator.second_expression = function (block) {
+        const order = Generator.ORDER_FUNCTION_CALL;
+        const ok_ng = Generator.getFieldValue(block, 'ok_ng') || null;
+        return [`ok == ${ok_ng}`,order];
+    };
 }

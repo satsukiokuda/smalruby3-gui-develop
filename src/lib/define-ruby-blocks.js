@@ -1665,6 +1665,27 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.second_expression = {
+        init: function () {
+            this.jsonInit({
+                type: 'ruby_expression',
+                message0: '処理が正常に%1',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'ok_ng',
+                        options: [
+                            ['行われた', 'true'],
+                            ['行われなかった', 'false']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'output_boolean']
+            });
+        }
+    };
+
 
     return ScratchBlocks;
 }

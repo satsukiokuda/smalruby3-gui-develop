@@ -1310,6 +1310,14 @@ const testersecond = function () {
                 </shadow>
             </value>
         </block>
+        ${blockSeparator}
+        <block type="second_expression">
+            <value name="ok_ng">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
     </category>
     `;
 };
