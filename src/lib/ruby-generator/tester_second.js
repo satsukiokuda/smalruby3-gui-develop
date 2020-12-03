@@ -18,12 +18,8 @@ export default function (Generator) {
     Generator.second_choose_number = function (block) {
         const choose_number = getUnquoteText(block, 'choose_number', Generator.ORDER_NONE);
         return `#テスト番号${choose_number}を選択する\n` +
-        `ok = ramdump_write(TEST_NO, TEST_${choose_number})\n` +
-        `if ok == false then\n` +
-        `   out_console_exit(__FILE__,__LINE__)\n` +
-        `   exit\n` +
-        `end\n` +
-        `\n`;
+        `ok = ramdump_write(TEST_NO, TEST_${choose_number})\n`
+        ;
     };
 
     Generator.second_choose_item = function (block) {
