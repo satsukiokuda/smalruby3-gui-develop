@@ -1164,6 +1164,29 @@ const tester = function () {
         `;
 };
 
+ScratchBlocks.Msg.CATEGORY_TESTERSECOND = 'tester_second';
+ScratchBlocks.ScratchMsgs.locales.en.CATEGORY_TESTERSECOND = 'tester_second';
+ScratchBlocks.ScratchMsgs.locales.ja.CATEGORY_TESTERSECOND = 'テスター2';
+ScratchBlocks.ScratchMsgs.locales['ja-Hira'].CATEGORY_TESTERSECOND = 'テスター2';
+
+const testersecond = function () {
+    return `
+    <category
+        name="%{BKY_CATEGORY_TESTERSECOND}"
+        id="tester_second"
+        colour="#008DB7"
+        secondaryColour="#007199">
+        <block type="second_choose_number">
+            <value name="choose_number">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
+    </category>
+    `;
+};
+
 const xmlOpen = '<xml style="display: none">';
 const xmlClose = '</xml>';
 
@@ -1188,7 +1211,8 @@ const makeToolboxXML = function (isStage, targetId, categoriesXML) {
         variables(isStage, targetId), gap,
         myBlocks(isStage, targetId), gap,
         ruby(isStage, targetId), gap,
-        tester(isStage, targetId)
+        tester(isStage, targetId), gap,
+        testersecond(isStage, targetId)
     ];
 
     if (categoriesXML) {

@@ -6,10 +6,14 @@
 export default function (ScratchBlocks) {
     const name = 'ruby';
     const name2 = 'tester'
+    const name3 = 'tester_second'
     if (ScratchBlocks.Categories.hasOwnProperty(name)) {
         return ScratchBlocks;
     }
     if (ScratchBlocks.Categories.hasOwnProperty(name2)) {
+        return ScratchBlocks;
+    }
+    if (ScratchBlocks.Categories.hasOwnProperty(name3)) {
         return ScratchBlocks;
     }
     ScratchBlocks.Categories[name] = name;
@@ -24,6 +28,12 @@ export default function (ScratchBlocks) {
         secondary: '#0000FF',
         tertiary: '#6495ED'
     };
+    ScratchBlocks.Categories[name3] = name3;
+    ScratchBlocks.Colours[name3] = {
+        primary: '#008DB7',
+        secondary: '#007199',
+        tertiary: '#006888'
+    };
     ScratchBlocks.Extensions.register(
         `colours_${name}`,
         ScratchBlocks.ScratchBlocks.VerticalExtensions.colourHelper(name)
@@ -31,6 +41,10 @@ export default function (ScratchBlocks) {
     ScratchBlocks.Extensions.register(
         `colours_${name2}`,
         ScratchBlocks.ScratchBlocks.VerticalExtensions.colourHelper(name2)
+    );
+    ScratchBlocks.Extensions.register(
+        `colours_${name3}`,
+        ScratchBlocks.ScratchBlocks.VerticalExtensions.colourHelper(name3)
     );
 
     ////////////////////Ruby Blocks//////////////////////
@@ -1241,6 +1255,24 @@ export default function (ScratchBlocks) {
                 ],
                 category: ScratchBlocks.Categories.ruby,
                 extensions: ['colours_tester', 'shape_statement']
+            });
+        }
+    };
+
+    /////////////////////////tester second Blocks/////////////////////////////
+    ScratchBlocks.Blocks.second_choose_number = {
+        init: function () {
+            this.jsonInit({
+                type: 'choose_number',
+                message0: 'テスト番号%1を選択',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'choose_number'
+                    },
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
