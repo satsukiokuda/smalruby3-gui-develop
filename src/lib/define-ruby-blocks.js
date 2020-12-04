@@ -1264,7 +1264,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'choose_number',
-                message0: 'テスト番号%1を選択',
+                message0: 'テスト番号%1を選択する',
                 args0: [
                     {
                         type: 'input_value',
@@ -1281,7 +1281,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'choose_item',
-                message0: 'テスト内項目%1を選択',
+                message0: 'テスト内項目%1を選択する',
                 args0: [
                     {
                         type: 'input_value',
