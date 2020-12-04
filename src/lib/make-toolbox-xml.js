@@ -1192,6 +1192,13 @@ const testersecond = function () {
         </block>
         <block type="second_test_mode">
         </block>
+        <block type="second_key_push">
+            <value name="key_push">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
         <block type="second_test_exit">
         </block>
         ${blockSeparator}

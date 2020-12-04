@@ -1305,6 +1305,35 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.second_key_push = {
+        init: function () {
+            this.jsonInit({
+                type: 'key_push',
+                message0: '%1キーを押す',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'key_push',
+                        options: [
+                            ['RETURN', 'KEY_RETURN'],
+                            ['SET', 'KEY_SET'],
+                            ['UP', 'KEY_UP'],
+                            ['DOWN', 'KEY_DOWN'],
+                            ['エンコーダUP', 'KEY_UP_2'],
+                            ['エンコーダDOWN', 'KEY_DOWN_2'],
+                            ['メモリ初期化', 'KEY_INIT'],
+                            ['調整値クリア', 'KEY_CLR'],
+                            ['調整', 'KEY_ADJUST'],
+                            ['リセット', 'KEY_RESET']
+                        ]
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
     ScratchBlocks.Blocks.second_test_exit = {
         init: function () {
             this.jsonInit({

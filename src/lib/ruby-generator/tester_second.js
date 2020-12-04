@@ -35,6 +35,13 @@ export default function (Generator) {
         ;
     };
 
+    Generator.second_key_push = function (block) {
+        const key_push = Generator.getFieldValue(block, 'key_push') || null;
+        return `#${key_push}キーを押す\n` +
+        `ok = ramdump_write(DUMP_KEY, ${key_push})\n` 
+        ;
+    };
+
     Generator.second_test_exit = function (block) {
         return `out_console_exit(__FILE__,__LINE__)\n` + `exit\n`
         ;
