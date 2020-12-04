@@ -1331,6 +1331,9 @@ const testersecond = function () {
             </value>
         </block>
         ${blockSeparator}
+        <block type="second_connection_off">
+        </block>
+        ${blockSeparator}
         <block type="second_expression">
             <value name="ok_ng">
                 <shadow type="text">

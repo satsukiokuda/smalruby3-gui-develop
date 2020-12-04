@@ -1744,6 +1744,17 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.second_connection_off = {
+        init: function () {
+            this.jsonInit({
+                type: 'connection_off',
+                message0: '疑似負荷の接続をOFFにする',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
     ScratchBlocks.Blocks.second_expression = {
         init: function () {
             this.jsonInit({
