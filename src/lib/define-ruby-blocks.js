@@ -1260,6 +1260,23 @@ export default function (ScratchBlocks) {
     };
 
     /////////////////////////tester second Blocks/////////////////////////////
+    ScratchBlocks.Blocks.second_init_figure_number = {
+        init: function () {
+            this.jsonInit({
+                type: 'init_figure_number',
+                message0: '図番:%1',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'figure_number'
+                    },
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
     ScratchBlocks.Blocks.second_choose_number = {
         init: function () {
             this.jsonInit({
@@ -1749,6 +1766,35 @@ export default function (ScratchBlocks) {
             this.jsonInit({
                 type: 'connection_off',
                 message0: '疑似負荷の接続をOFFにする',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_connection_change = {
+        init: function () {
+            this.jsonInit({
+                type: 'connection_change',
+                message0: '疑似負荷の接続をチャンネル%1に切り替える',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'channel',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
                 category: ScratchBlocks.Categories.ruby,
                 extensions: ['colours_tester_second', 'shape_statement']
             });

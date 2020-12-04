@@ -1176,6 +1176,13 @@ const testersecond = function () {
         id="tester_second"
         colour="#008DB7"
         secondaryColour="#007199">
+        <block type="second_init_figure_number">
+            <value name="figure_number">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
         <block type="second_choose_number">
             <value name="choose_number">
                 <shadow type="text">
@@ -1332,6 +1339,13 @@ const testersecond = function () {
         </block>
         ${blockSeparator}
         <block type="second_connection_off">
+        </block>
+        <block type="second_connection_change">
+            <value name="channel">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
         </block>
         ${blockSeparator}
         <block type="second_expression">

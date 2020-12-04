@@ -15,6 +15,12 @@ export default function (Generator) {
         return Generator.valueToCode(block, fieldName, order);
     };
 
+    Generator.second_init_figure_number = function (block) {
+        const figure_number = getUnquoteText(block, 'figure_number', Generator.ORDER_NONE);
+        return `require "./${figure_number}.rb"\n` + 
+        `\n`;
+    };
+
     Generator.second_choose_number = function (block) {
         const choose_number = getUnquoteText(block, 'choose_number', Generator.ORDER_NONE);
         return `#テスト番号${choose_number}を選択する\n` +
@@ -230,6 +236,13 @@ export default function (Generator) {
     Generator.second_connection_off = function (block) {
         return `#接続をOFFにする\n` +
         `ok = GPIB_OFF()\n`
+        ;
+    };
+
+    Generator.second_connection_change = function (block) {
+        const channel = Generator.getFieldValue(block, 'channel') || null;
+        return `#接続チャンネル ${channel}\n` +
+        `ok = GPIB_output(CONNECT_CH${channel})\n` 
         ;
     };
 
