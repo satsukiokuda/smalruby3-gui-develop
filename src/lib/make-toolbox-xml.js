@@ -1201,6 +1201,8 @@ const testersecond = function () {
         </block>
         <block type="second_test_exit">
         </block>
+        <block type="second_test_finish">
+        </block>
         ${blockSeparator}
         <block type="second_load_output_off">
         </block>
