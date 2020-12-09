@@ -1443,7 +1443,7 @@ export default function (ScratchBlocks) {
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
@@ -1509,7 +1509,7 @@ export default function (ScratchBlocks) {
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
@@ -1575,7 +1575,7 @@ export default function (ScratchBlocks) {
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
@@ -1652,7 +1652,7 @@ export default function (ScratchBlocks) {
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
@@ -1718,7 +1718,7 @@ export default function (ScratchBlocks) {
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
@@ -1752,7 +1752,7 @@ export default function (ScratchBlocks) {
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
@@ -1786,7 +1786,7 @@ export default function (ScratchBlocks) {
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
