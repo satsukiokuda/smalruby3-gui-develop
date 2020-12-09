@@ -212,15 +212,18 @@ export default function (Generator) {
 
     Generator.second_expression = function (block) {
         const order = Generator.ORDER_FUNCTION_CALL;
+        const result = getUnquoteText(block, 'result', Generator.ORDER_NONE);
         const ok_ng = Generator.getFieldValue(block, 'ok_ng') || null;
-        return [`ok == ${ok_ng}`,order];
+        return [`${result} == ${ok_ng}`,order];
     };
 
     Generator.second_measure_num = function (block) {
         return [`value`,Generator.ORDER_ATOMIC];
     };
 
-    Generator.second_test_result = function (block) {
-        return [`result`,Generator.ORDER_ATOMIC];
+    Generator.second_test_process = function (block) {
+        const process = getUnquoteText(block, 'process', Generator.ORDER_NONE);
+        const result_var = getUnquoteText(block, 'result_var', Generator.ORDER_NONE);
+        return `${result_var} = ${process}\n`;
     };
 }

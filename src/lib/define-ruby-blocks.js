@@ -1835,14 +1835,18 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'ruby_expression',
-                message0: '処理が正常に%1',
+                message0: '%1が%2',
                 args0: [
+                    {
+                        type: 'input_value',
+                        name: 'result',
+                    },
                     {
                         type: 'field_dropdown',
                         name: 'ok_ng',
                         options: [
-                            ['行われた', 'true'],
-                            ['行われなかった', 'false']
+                            ['成功', 'true'],
+                            ['失敗', 'false'],
                         ]
                     }
                 ],
@@ -1863,13 +1867,24 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.second_test_result_var = {
+    ScratchBlocks.Blocks.second_test_process = {
         init: function () {
             this.jsonInit({
-                type: 'test_result',
-                message0: 'テスト結果',
+                type: 'test_process',
+                message0: '%1をして 結果を%2に保存する',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'process'
+
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'result_var',
+                    }
+                ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
