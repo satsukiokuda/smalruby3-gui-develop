@@ -1351,6 +1351,7 @@ export default function (ScratchBlocks) {
         }
     };
 
+
     ScratchBlocks.Blocks.second_test_exit = {
         init: function () {
             this.jsonInit({
@@ -1367,6 +1368,35 @@ export default function (ScratchBlocks) {
             this.jsonInit({
                 type: 'test_finish',
                 message0: 'テストを完了する',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_measure_check = {
+        init: function () {
+            this.jsonInit({
+                type: 'measure_check',
+                message0: '測定値%1を測る',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'measure',
+                        options: [
+                            ['0', '0'],
+                            ['1', '1'],
+                            ['2', '2'],
+                            ['3', '3'],
+                            ['4', '4'],
+                            ['5', '5'],
+                            ['6', '6'],
+                            ['7', '7'],
+                            ['8', '8'],
+                            ['9', '9']
+                        ]
+                    }
+                ],
                 category: ScratchBlocks.Categories.ruby,
                 extensions: ['colours_tester_second', 'shape_statement']
             });
@@ -1818,6 +1848,28 @@ export default function (ScratchBlocks) {
                 ],
                 category: ScratchBlocks.Categories.ruby,
                 extensions: ['colours_tester_second', 'output_boolean']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_measure_num = {
+        init: function () {
+            this.jsonInit({
+                type: 'measure_num',
+                message0: '測定値',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'output_number']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_test_result_var = {
+        init: function () {
+            this.jsonInit({
+                type: 'test_result',
+                message0: 'テスト結果',
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };

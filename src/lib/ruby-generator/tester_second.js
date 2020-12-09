@@ -58,6 +58,13 @@ export default function (Generator) {
         ;
     };
 
+    Generator.second_measure_check = function (block) {
+        const measure = Generator.getFieldValue(block, 'measure') || null;
+        return `#測定値を測る(ohm)\n` +
+        `ok, value = ramdump_read(VALUE_${measure})\n`
+        ;
+    };
+
     Generator.second_load_output_off = function (block) {
         return `#疑似負荷出力OFF\n` +
         `ok = CA150_output_OFF()\n`
@@ -250,5 +257,13 @@ export default function (Generator) {
         const order = Generator.ORDER_FUNCTION_CALL;
         const ok_ng = Generator.getFieldValue(block, 'ok_ng') || null;
         return [`ok == ${ok_ng}`,order];
+    };
+
+    Generator.second_measure_num = function (block) {
+        return [`value`,Generator.ORDER_ATOMIC];
+    };
+
+    Generator.second_test_result = function (block) {
+        return [`result`,Generator.ORDER_ATOMIC];
     };
 }

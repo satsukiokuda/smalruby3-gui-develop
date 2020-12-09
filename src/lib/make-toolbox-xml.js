@@ -1211,6 +1211,14 @@ const testersecond = function () {
         <block type="second_test_finish">
         </block>
         ${blockSeparator}
+        <block type="second_measure_check">
+            <value name="measure">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+        </block>
+        ${blockSeparator}
         <block type="second_load_output_off">
         </block>
         <block type="second_resistance_output">
@@ -1354,6 +1362,11 @@ const testersecond = function () {
                     <field name="TEXT"></field>
                 </shadow>
             </value>
+        </block>
+        ${blockSeparator}
+        <block type="second_measure_num">
+        </block>
+        <block type="second_test_result">
         </block>
     </category>
     `;
