@@ -1289,7 +1289,7 @@ export default function (ScratchBlocks) {
                     },
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
@@ -1306,7 +1306,7 @@ export default function (ScratchBlocks) {
                     },
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
@@ -1317,7 +1317,7 @@ export default function (ScratchBlocks) {
                 type: 'test_mode',
                 message0: 'テストモードへ投入する',
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
@@ -1346,7 +1346,7 @@ export default function (ScratchBlocks) {
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
@@ -1398,7 +1398,7 @@ export default function (ScratchBlocks) {
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };
@@ -1409,7 +1409,7 @@ export default function (ScratchBlocks) {
                 type: 'load_output_off',
                 message0: '疑似負荷出力をOFFにする',
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
+                extensions: ['colours_tester_second', 'output_number']
             });
         }
     };

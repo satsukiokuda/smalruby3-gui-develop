@@ -23,28 +23,24 @@ export default function (Generator) {
 
     Generator.second_choose_number = function (block) {
         const choose_number = getUnquoteText(block, 'choose_number', Generator.ORDER_NONE);
-        return `#テスト番号${choose_number}を選択する\n` +
-        `ok = ramdump_write(TEST_NO, TEST_${choose_number})\n`
+        return [`ramdump_write(TEST_NO, TEST_${choose_number})`,Generator.ORDER_ATOMIC];
         ;
     };
 
     Generator.second_choose_item = function (block) {
         const choose_item = getUnquoteText(block, 'choose_item', Generator.ORDER_NONE);
-        return `#テスト内項目${choose_item}を選択する\n` +
-        `ok = ramdump_write(TEST_SUB, ${choose_item})\n`
+        return [`ramdump_write(TEST_SUB, ${choose_item})`,Generator.ORDER_ATOMIC];
         ;
     };
 
     Generator.second_test_mode = function (block) {
-        return `#テストモードへ投入する\n` +
-        `ok = ramdump_write(FLG_MAIN, 2)\n` 
+        return [`ramdump_write(FLG_MAIN, 2)`]; 
         ;
     };
 
     Generator.second_key_push = function (block) {
         const key_push = Generator.getFieldValue(block, 'key_push') || null;
-        return `#${key_push}キーを押す\n` +
-        `ok = ramdump_write(DUMP_KEY, ${key_push})\n` 
+        return [`ramdump_write(DUMP_KEY, ${key_push})`]; 
         ;
     };
 
@@ -60,14 +56,12 @@ export default function (Generator) {
 
     Generator.second_measure_check = function (block) {
         const measure = Generator.getFieldValue(block, 'measure') || null;
-        return `#測定値を測る(ohm)\n` +
-        `ok, value = ramdump_read(VALUE_${measure})\n`
+        return [`ramdump_read(VALUE_${measure})`,Generator.ORDER_ATOMIC];
         ;
     };
 
     Generator.second_load_output_off = function (block) {
-        return `#疑似負荷出力OFF\n` +
-        `ok = CA150_output_OFF()\n`
+        return [`CA150_output_OFF()`];
         ;
     };
     
