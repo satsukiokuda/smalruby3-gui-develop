@@ -1403,6 +1403,36 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.second_set_clock = {
+        init: function () {
+            this.jsonInit({
+                type: 'set_clock',
+                message0: '%1を%2に合わせる',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'time_type',
+                        options: [
+                            ['年', 'EDIT_CLK_YEAR'],
+                            ['月', 'EDIT_CLK_MONTH'],
+                            ['日', 'EDIT_CLK_DAY'],
+                            ['曜日', 'EDIT_CLK_WDAY'],
+                            ['時', 'EDIT_CLK_HOUR'],
+                            ['分', 'EDIT_CLK_MIN'],
+                            ['秒', 'EDIT_CLK_SEC']
+                        ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'time_var'
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'output_number']
+            });
+        }
+    };
+
     ScratchBlocks.Blocks.second_load_output_off = {
         init: function () {
             this.jsonInit({

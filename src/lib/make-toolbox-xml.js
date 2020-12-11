@@ -1218,6 +1218,18 @@ const testersecond = function () {
                 </shadow>
             </value>
         </block>
+        <block type="second_set_clock">
+            <value name="time_type">
+                <shadow type="math_number">
+                    <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="time_var">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
         ${blockSeparator}
         <block type="second_load_output_off">
         </block>

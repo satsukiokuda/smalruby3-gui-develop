@@ -54,6 +54,12 @@ export default function (Generator) {
         ;
     };
 
+    Generator.second_set_clock = function (block) {
+        const time_type = Generator.getFieldValue(block, 'time_type') || null;
+        const time_var = getUnquoteText(block, 'time_var', Generator.ORDER_NONE);
+        return [`ramdump_write(${time_type}, ${time_var})`];
+    };
+
     Generator.second_measure_check = function (block) {
         const measure = Generator.getFieldValue(block, 'measure') || null;
         return [`ramdump_read(VALUE_${measure})`,Generator.ORDER_ATOMIC];

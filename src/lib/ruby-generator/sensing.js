@@ -121,14 +121,19 @@ export default function (Generator) {
         YEAR: 'year',
         MONTH: 'month',
         DATE: 'day',
-        DAYOFWEEK: 'wday + 1',
+        DAYOFWEEK: 'wday',
         HOUR: 'hour',
-        MINUTE: 'min',
-        SECOND: 'sec'
+        MINUTE: 'minute',
+        SECOND: 'second'
     };
     Generator.sensing_current = function (block) {
         const menu = Generator.getFieldValue(block, 'CURRENTMENU');
-        return [`Time.now.${currentMenuToMethod[menu]}`, Generator.ORDER_FUNCTION_CALL];
+        if (menu == 'YEAR') {
+            return [`DateTime.now.${currentMenuToMethod[menu]}.to_i - 2000`, Generator.ORDER_FUNCTION_CALL];
+        }
+        else {
+            return [`DateTime.now.${currentMenuToMethod[menu]}.to_i`, Generator.ORDER_FUNCTION_CALL];
+        }
     };
 
     Generator.sensing_dayssince2000 = function () {
