@@ -33,7 +33,7 @@ export default function (Generator) {
 
     const getListName = function (block) {
         const list = Generator.listName(Generator.getFieldId(block, 'LIST'));
-        return `list(${Generator.quote_(list)})`;
+        return `${list}`;
     };
 
     Generator.data_listcontents = function (block) {
@@ -62,7 +62,7 @@ export default function (Generator) {
         const index = Generator.valueToCode(block, 'INDEX', Generator.ORDER_NONE) - 1 || 0;
         const item = Generator.valueToCode(block, 'ITEM', Generator.ORDER_NONE) || '0';
         const list = getListName(block);
-        return `${list}.insert(${index}, ${Generator.nosToCode(item)})\n`;
+        return `${list}[${index},0] = ${Generator.nosToCode(item)}\n`;
     };
 
     Generator.data_replaceitemoflist = function (block) {
