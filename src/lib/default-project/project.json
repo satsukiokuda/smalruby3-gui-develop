@@ -3,29 +3,17 @@
         {
             "isStage": true,
             "name": "Stage",
-            "variables": {
-                "`jEk@4|i[#Fk?(8x)AV.-my variable": [
-                    "作った変数",
-                    0
+            "variables": {},
+            "lists": {
+                "_=#Gejsh60)s[ui89,^%": [
+                    "測定値",
+                    []
                 ],
-                "@nQP*7F(2o3MmbwmSca[": [
-                    "SW1",
-                    0
-                ],
-                "7b,Kl9om_IBH!zsGN^@a": [
-                    "SW2",
-                    0
-                ],
-                "H~`ef]DRRjb+Y)0Nas;z": [
-                    "SW3",
-                    0
-                ],
-                "Py%2VX0mW0*Q%Hg2O(XM": [
-                    "SW4",
-                    0
+                "3WNEea~yY/B[l#u5L[;*": [
+                    "判定",
+                    []
                 ]
             },
-            "lists": {},
             "broadcasts": {
                 "OtY)I@9bA@qCCrI%uhb[": "zuban",
                 "Hw%^=btylCHTYm{j_Bc/": "test_finish",
@@ -969,95 +957,40 @@
     ],
     "monitors": [
         {
-            "id": "@nQP*7F(2o3MmbwmSca[",
-            "mode": "default",
-            "opcode": "data_variable",
+            "id": "_=#Gejsh60)s[ui89,^%",
+            "mode": "list",
+            "opcode": "data_listcontents",
             "params": {
-                "VARIABLE": "SW1"
+                "LIST": "測定値"
             },
             "spriteName": null,
-            "value": 0,
+            "value": [],
             "width": 0,
             "height": 0,
             "x": 5,
             "y": 5,
-            "visible": false,
-            "min": 0,
-            "max": 100
+            "visible": false
         },
         {
-            "id": "7b,Kl9om_IBH!zsGN^@a",
-            "mode": "default",
-            "opcode": "data_variable",
+            "id": "3WNEea~yY/B[l#u5L[;*",
+            "mode": "list",
+            "opcode": "data_listcontents",
             "params": {
-                "VARIABLE": "SW2"
+                "LIST": "判定"
             },
             "spriteName": null,
-            "value": 0,
+            "value": [],
             "width": 0,
             "height": 0,
-            "x": 5,
-            "y": 32,
-            "visible": false,
-            "min": 0,
-            "max": 100
-        },
-        {
-            "id": "H~`ef]DRRjb+Y)0Nas;z",
-            "mode": "default",
-            "opcode": "data_variable",
-            "params": {
-                "VARIABLE": "SW3"
-            },
-            "spriteName": null,
-            "value": 0,
-            "width": 0,
-            "height": 0,
-            "x": 5,
-            "y": 59,
-            "visible": false,
-            "min": 0,
-            "max": 100
-        },
-        {
-            "id": "Py%2VX0mW0*Q%Hg2O(XM",
-            "mode": "default",
-            "opcode": "data_variable",
-            "params": {
-                "VARIABLE": "SW4"
-            },
-            "spriteName": null,
-            "value": 0,
-            "width": 0,
-            "height": 0,
-            "x": 5,
-            "y": 86,
-            "visible": false,
-            "min": 0,
-            "max": 100
-        },
-        {
-            "id": "`jEk@4|i[#Fk?(8x)AV.-my variable",
-            "mode": "default",
-            "opcode": "data_variable",
-            "params": {
-                "VARIABLE": "作った変数"
-            },
-            "spriteName": null,
-            "value": 0,
-            "width": 0,
-            "height": 0,
-            "x": 5,
-            "y": 113,
-            "visible": false,
-            "min": 0,
-            "max": 100
+            "x": 155,
+            "y": 5,
+            "visible": false
         }
     ],
     "extensions": [],
     "meta": {
         "semver": "3.0.0",
         "vm": "0.2.0-prerelease.20190102175344",
-        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
     }
 }
