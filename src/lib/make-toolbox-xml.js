@@ -1383,6 +1383,18 @@ const testersecond = function () {
         ${blockSeparator}
         <block type="second_measure_num">
         </block>
+        <block type="second_double_var">
+            <value name="var1">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+            <value name="var2">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
         <block type="second_test_process">
             <value name="process">
                 <shadow type="text">
@@ -1390,6 +1402,13 @@ const testersecond = function () {
                 </shadow>
             </value>
             <value name="result_var">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="second_tester_test_result">
+            <value name="TEST_RESULT">
                 <shadow type="text">
                     <field name="TEXT"></field>
                 </shadow>

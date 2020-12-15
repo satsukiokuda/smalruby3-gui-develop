@@ -1897,6 +1897,27 @@ export default function (ScratchBlocks) {
         }
     };
 
+    ScratchBlocks.Blocks.second_double_var = {
+        init: function () {
+            this.jsonInit({
+                type: 'measure_num',
+                message0: '変数%1と変数%2',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'var1',
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'var2',
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'output_number']
+            });
+        }
+    };
+
     ScratchBlocks.Blocks.second_test_process = {
         init: function () {
             this.jsonInit({
@@ -1911,6 +1932,23 @@ export default function (ScratchBlocks) {
                     {
                         type: 'input_value',
                         name: 'result_var',
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_tester_test_result = {
+        init: function () {
+            this.jsonInit({
+                type: 'test_result',
+                message0: '%1を表示',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'TEST_RESULT'
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,

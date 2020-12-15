@@ -219,9 +219,21 @@ export default function (Generator) {
         return [`value`,Generator.ORDER_ATOMIC];
     };
 
+    Generator.second_double_var = function (block) {
+        const var1 = getUnquoteText(block, 'var1', Generator.ORDER_NONE);
+        const var2 = getUnquoteText(block, 'var2', Generator.ORDER_NONE);
+        return [`${var1},${var2}`,Generator.ORDER_ATOMIC];
+    };
+
     Generator.second_test_process = function (block) {
         const process = getUnquoteText(block, 'process', Generator.ORDER_NONE);
         const result_var = getUnquoteText(block, 'result_var', Generator.ORDER_NONE);
         return `${result_var} = ${process}\n`;
     };
+
+    Generator.second_tester_test_result = function (block) {
+        const test_result = Generator.valueToCode(block, 'TEST_RESULT') || null;
+        return `puts ${test_result}\n`;
+    };
+
 }
