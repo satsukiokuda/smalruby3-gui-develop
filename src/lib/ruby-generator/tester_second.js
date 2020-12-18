@@ -231,7 +231,7 @@ export default function (Generator) {
         return `${result_var} = ${process}\n`;
     };
 
-    Generator.second_tester_test_result = function (block) {
+    Generator.second_show = function (block) {
         const test_result = Generator.valueToCode(block, 'TEST_RESULT') || null;
         return `puts ${test_result}\n`;
     };

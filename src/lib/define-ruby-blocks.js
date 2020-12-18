@@ -641,7 +641,7 @@ export default function (ScratchBlocks) {
     };
 
     /////////////////////////tester Blocks/////////////////////////////
-    ScratchBlocks.Blocks.init_figure_number = {
+    ScratchBlocks.Blocks.tester_init_figure_number = {
         init: function () {
             this.jsonInit({
                 type: 'init_figure_number',
@@ -658,7 +658,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.test_finish = {
+    ScratchBlocks.Blocks.tester_test_finish = {
         init: function () {
             this.jsonInit({
                 type: 'test_finish',
@@ -669,7 +669,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.measure_range_check = {
+    ScratchBlocks.Blocks.tester_measure_range_check = {
         init: function () {
             this.jsonInit({
                 type: 'measure_range_check',
@@ -706,7 +706,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.choose_number = {
+    ScratchBlocks.Blocks.tester_choose_number = {
         init: function () {
             this.jsonInit({
                 type: 'choose_number',
@@ -723,7 +723,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.choose_item = {
+    ScratchBlocks.Blocks.tester_choose_item = {
         init: function () {
             this.jsonInit({
                 type: 'choose_item',
@@ -740,7 +740,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.set_clock = {
+    ScratchBlocks.Blocks.tester_set_clock = {
         init: function () {
             this.jsonInit({
                 type: 'set_clock',
@@ -751,7 +751,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.test_mode = {
+    ScratchBlocks.Blocks.tester_test_mode = {
         init: function () {
             this.jsonInit({
                 type: 'test_mode',
@@ -762,7 +762,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.key_push = {
+    ScratchBlocks.Blocks.tester_key_push = {
         init: function () {
             this.jsonInit({
                 type: 'key_push',
@@ -791,7 +791,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.test_result = {
+    ScratchBlocks.Blocks.tester_test_result = {
         init: function () {
             this.jsonInit({
                 type: 'test_result',
@@ -814,7 +814,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.load_output_off = {
+    ScratchBlocks.Blocks.tester_load_output_off = {
         init: function () {
             this.jsonInit({
                 type: 'load_output_off',
@@ -825,7 +825,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.resistance_output = {
+    ScratchBlocks.Blocks.tester_resistance_output = {
         init: function () {
             this.jsonInit({
                 type: 'resistance_output',
@@ -859,7 +859,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.resistance_output_k = {
+    ScratchBlocks.Blocks.tester_resistance_output_k = {
         init: function () {
             this.jsonInit({
                 type: 'resistance_output_k',
@@ -925,7 +925,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.voltage_output_m = {
+    ScratchBlocks.Blocks.tester_voltage_output_m = {
         init: function () {
             this.jsonInit({
                 type: 'voltage_output_m',
@@ -991,7 +991,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.voltage_output = {
+    ScratchBlocks.Blocks.tester_voltage_output = {
         init: function () {
             this.jsonInit({
                 type: 'voltage_output',
@@ -1068,7 +1068,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.current_output_m = {
+    ScratchBlocks.Blocks.tester_current_output_m = {
         init: function () {
             this.jsonInit({
                 type: 'current_output_m',
@@ -1134,7 +1134,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.pt_output = {
+    ScratchBlocks.Blocks.tester_pt_output = {
         init: function () {
             this.jsonInit({
                 type: 'pt_output',
@@ -1168,7 +1168,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.k_output = {
+    ScratchBlocks.Blocks.tester_k_output = {
         init: function () {
             this.jsonInit({
                 type: 'k_output',
@@ -1202,7 +1202,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.connection_off = {
+    ScratchBlocks.Blocks.tester_connection_off = {
         init: function () {
             this.jsonInit({
                 type: 'connection_off',
@@ -1213,7 +1213,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.connection_change = {
+    ScratchBlocks.Blocks.tester_connection_change = {
         init: function () {
             this.jsonInit({
                 type: 'connection_change',
@@ -1242,7 +1242,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.tester_test_result = {
+    ScratchBlocks.Blocks.tester_show = {
         init: function () {
             this.jsonInit({
                 type: 'test_result',
@@ -1940,7 +1940,7 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.second_tester_test_result = {
+    ScratchBlocks.Blocks.second_show = {
         init: function () {
             this.jsonInit({
                 type: 'test_result',

@@ -15,18 +15,18 @@ export default function (Generator) {
         return Generator.valueToCode(block, fieldName, order);
     };
     
-    Generator.init_figure_number = function (block) {
+    Generator.tester_init_figure_number = function (block) {
         const figure_number = getUnquoteText(block, 'figure_number', Generator.ORDER_NONE);
         return `require "./${figure_number}.rb"\n` + 
         `\n`;
     };
 
-    Generator.test_finish = function (block) {
+    Generator.tester_test_finish = function (block) {
         return `#テストを完了する\n` + `out_console_finish()\n` + `exit\n`  +
         `\n`;
     };
     
-    Generator.measure_range_check = function (block) {
+    Generator.tester_measure_range_check = function (block) {
         const measure = Generator.getFieldValue(block, 'measure') || null;
         const range_first = getUnquoteText(block, 'range_first', Generator.ORDER_NONE);
         const range_last = getUnquoteText(block, 'range_last', Generator.ORDER_NONE);
@@ -41,7 +41,7 @@ export default function (Generator) {
         `\n`;
     };
     
-    Generator.choose_number = function (block) {
+    Generator.tester_choose_number = function (block) {
         const choose_number = getUnquoteText(block, 'choose_number', Generator.ORDER_NONE);
         return `#テスト番号${choose_number}を選択する\n` +
         `ok = ramdump_write(TEST_NO, TEST_${choose_number})\n` +
@@ -57,7 +57,7 @@ export default function (Generator) {
         `\n`;
     };
     
-    Generator.choose_item = function (block) {
+    Generator.tester_choose_item = function (block) {
         const choose_item = getUnquoteText(block, 'choose_item', Generator.ORDER_NONE);
         return `#テスト内項目${choose_item}へ\n` +
         `ok = ramdump_write(TEST_SUB, ${choose_item})\n` +
@@ -68,7 +68,7 @@ export default function (Generator) {
         `\n`;
     };
     
-    Generator.set_clock = function (block) {
+    Generator.tester_set_clock = function (block) {
         return `#時計合わせ\n` +
         `nowTime = DateTime.now\n` +
         `\n` +
@@ -106,7 +106,7 @@ export default function (Generator) {
         `\n`;
     };
     
-    Generator.test_mode = function (block) {
+    Generator.tester_test_mode = function (block) {
         return `#テストへ投入する\n` +
         `ok = ramdump_write(FLG_MAIN, 2)\n` +
         `if ok == false then\n` +
@@ -116,7 +116,7 @@ export default function (Generator) {
         `\n`;
     };
 
-    Generator.key_push = function (block) {
+    Generator.tester_key_push = function (block) {
         const key_push = Generator.getFieldValue(block, 'key_push') || null;
         return `#${key_push}キーを押す\n` +
         `ok = ramdump_write(DUMP_KEY, ${key_push})\n` +
@@ -127,7 +127,7 @@ export default function (Generator) {
         `\n`;
     };
 
-    Generator.test_result = function (block) {
+    Generator.tester_test_result = function (block) {
         const test_result = Generator.getFieldValue(block, 'test_result') || null;
         return `#テスト結果${test_result}?\n` +
         `ok, result = ramdump_read(TEST_RESULT)\n` +
@@ -142,7 +142,7 @@ export default function (Generator) {
         `\n`;
     };
 
-    Generator.load_output_off = function (block) {
+    Generator.tester_load_output_off = function (block) {
         return `#疑似負荷出力OFF\n` +
         `ok = CA150_output_OFF()\n` +
         `if ok == false then\n` +
@@ -152,7 +152,7 @@ export default function (Generator) {
         `\n`;
     };
     
-    Generator.resistance_output = function (block) {
+    Generator.tester_resistance_output = function (block) {
         const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
         const num_period = Generator.getFieldValue(block, 'num_period') || null;
         if (num_main == 0) {
@@ -175,7 +175,7 @@ export default function (Generator) {
         }
     };
 
-    Generator.resistance_output_k = function (block) {
+    Generator.tester_resistance_output_k = function (block) {
         const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
         const num_period_1 = Generator.getFieldValue(block, 'num_period_1') || null;
         const num_period_2 = Generator.getFieldValue(block, 'num_period_2') || null;
@@ -222,7 +222,7 @@ export default function (Generator) {
         }
     };
 
-    Generator.voltage_output_m = function (block) {
+    Generator.tester_voltage_output_m = function (block) {
         const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
         const num_period_1 = Generator.getFieldValue(block, 'num_period_1') || null;
         const num_period_2 = Generator.getFieldValue(block, 'num_period_2') || null;
@@ -269,7 +269,7 @@ export default function (Generator) {
         }
     };
 
-    Generator.voltage_output = function (block) {
+    Generator.tester_voltage_output = function (block) {
         const num_main = Generator.getFieldValue(block, 'num_main') || null;
         const num_period_1 = Generator.getFieldValue(block, 'num_period_1') || null;
         const num_period_2 = Generator.getFieldValue(block, 'num_period_2') || null;
@@ -316,7 +316,7 @@ export default function (Generator) {
         }
     };
 
-    Generator.current_output_m = function (block) {
+    Generator.tester_current_output_m = function (block) {
         const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
         const num_period_1 = Generator.getFieldValue(block, 'num_period_1') || null;
         const num_period_2 = Generator.getFieldValue(block, 'num_period_2') || null;
@@ -363,7 +363,7 @@ export default function (Generator) {
         }
     };
 
-    Generator.pt_output = function (block) {
+    Generator.tester_pt_output = function (block) {
         const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
         const num_period = Generator.getFieldValue(block, 'num_period') || null;
         if (num_main == 0) {
@@ -386,7 +386,7 @@ export default function (Generator) {
         } 
     };
 
-    Generator.k_output = function (block) {
+    Generator.tester_k_output = function (block) {
         const num_main = getUnquoteText(block, 'num_main', Generator.ORDER_NONE);
         const num_period = Generator.getFieldValue(block, 'num_period') || null;
         if (num_main == 0) {
@@ -409,7 +409,7 @@ export default function (Generator) {
         } 
     };
 
-    Generator.connection_off = function (block) {
+    Generator.tester_connection_off = function (block) {
         return `#接続をOFFにする\n` +
         `ok = GPIB_OFF()\n` +
         `if ok == false then\n` +
@@ -419,7 +419,7 @@ export default function (Generator) {
         `\n`;
     };
 
-    Generator.connection_change = function (block) {
+    Generator.tester_connection_change = function (block) {
         const channel = Generator.getFieldValue(block, 'channel') || null;
         return `#接続チャンネル ${channel}\n` +
         `ok = GPIB_output(CONNECT_CH${channel})\n` +
@@ -430,7 +430,7 @@ export default function (Generator) {
         `\n`;
     };
 
-    Generator.tester_test_result = function (block) {
+    Generator.tester_show = function (block) {
         const test_result = Generator.valueToCode(block, 'TEST_RESULT') || null;
         return `puts ${test_result}\n`;
     };

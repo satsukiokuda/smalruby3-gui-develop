@@ -956,17 +956,17 @@ const tester = function () {
         id="tester"
         colour="#1E90FF"
         secondaryColour="#0000FF">
-        <block type="init_figure_number">
+        <block type="tester_init_figure_number">
             <value name="figure_number">
                 <shadow type="text">
                     <field name="TEXT"></field>
                 </shadow>
             </value>
         </block>
-        <block type="test_finish">
+        <block type="tester_test_finish">
         </block>
         ${blockSeparator}
-        <block type="measure_range_check">
+        <block type="tester_measure_range_check">
             <value name="figure_number">
                 <shadow type="math_number">
                     <field name="NUM"></field>
@@ -984,32 +984,32 @@ const tester = function () {
             </value>
         </block>
         ${blockSeparator}
-        <block type="choose_number">
+        <block type="tester_choose_number">
             <value name="choose_number">
                 <shadow type="text">
                     <field name="TEXT"></field>
                 </shadow>
             </value>
         </block>
-        <block type="choose_item">
+        <block type="tester_choose_item">
             <value name="choose_item">
                 <shadow type="text">
                     <field name="TEXT"></field>
                 </shadow>
             </value>
         </block>
-        <block type="set_clock">
+        <block type="tester_set_clock">
         </block>
-        <block type="test_mode">
+        <block type="tester_test_mode">
         </block>
-        <block type="key_push">
+        <block type="tester_key_push">
             <value name="key_push">
                 <shadow type="text">
                     <field name="TEXT"></field>
                 </shadow>
             </value>
         </block>
-        <block type="test_result">
+        <block type="tester_test_result">
             <value name="test_result">
                 <shadow type="text">
                     <field name="TEXT"></field>
@@ -1017,9 +1017,9 @@ const tester = function () {
             </value>
         </block>
         ${blockSeparator}
-        <block type="load_output_off">
+        <block type="tester_load_output_off">
         </block>
-        <block type="resistance_output">
+        <block type="tester_resistance_output">
             <value name="num_main">
                 <shadow type="text">
                     <field name="TEXT">100</field>
@@ -1031,7 +1031,7 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
-        <block type="resistance_output_k">
+        <block type="tester_resistance_output_k">
             <value name="num_main">
                 <shadow type="text">
                     <field name="TEXT">1</field>
@@ -1053,7 +1053,7 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
-        <block type="voltage_output_m">
+        <block type="tester_voltage_output_m">
             <value name="num_main">
                 <shadow type="text">
                     <field name="TEXT">100</field>
@@ -1075,7 +1075,7 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
-        <block type="voltage_output">
+        <block type="tester_voltage_output">
             <value name="num_main">
                 <shadow type="math_number">
                     <field name="NUM"></field>
@@ -1097,7 +1097,7 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
-        <block type="current_output_m">
+        <block type="tester_current_output_m">
             <value name="num_main">
                 <shadow type="text">
                     <field name="TEXT">4</field>
@@ -1119,7 +1119,7 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
-        <block type="pt_output">
+        <block type="tester_pt_output">
             <value name="num_main">
                 <shadow type="text">
                     <field name="TEXT">0</field>
@@ -1131,7 +1131,7 @@ const tester = function () {
                 </shadow>
             </value>
         </block>
-        <block type="k_output">
+        <block type="tester_k_output">
             <value name="num_main">
                 <shadow type="text">
                     <field name="TEXT">0</field>
@@ -1144,16 +1144,16 @@ const tester = function () {
             </value>
         </block>
         ${blockSeparator}
-        <block type="connection_off">
+        <block type="tester_connection_off">
         </block>
-        <block type="connection_change">
+        <block type="tester_connection_change">
             <value name="channel">
                 <shadow type="math_number">
                     <field name="NUM"></field>
                 </shadow>
             </value>
         </block>
-        <block type="tester_test_result">
+        <block type="tester_show">
             <value name="TEST_RESULT">
                 <shadow type="text">
                     <field name="TEXT"></field>
@@ -1407,7 +1407,7 @@ const testersecond = function () {
                 </shadow>
             </value>
         </block>
-        <block type="second_tester_test_result">
+        <block type="second_show">
             <value name="TEST_RESULT">
                 <shadow type="text">
                     <field name="TEXT"></field>
