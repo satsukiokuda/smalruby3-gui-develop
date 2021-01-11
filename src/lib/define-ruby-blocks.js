@@ -1281,15 +1281,19 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'choose_number',
-                message0: 'テスト番号%1を選択する',
+                message0: 'テスト番号%1を選択する 処理結果保存用変数：%2',
                 args0: [
                     {
                         type: 'input_value',
                         name: 'choose_number'
                     },
+                    {
+                        type: 'input_value',
+                        name: 'value'
+                    }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1298,15 +1302,19 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'choose_item',
-                message0: 'テスト内項目%1を選択する',
+                message0: 'テスト内項目%1を選択する 処理結果保存用変数：%2',
                 args0: [
                     {
                         type: 'input_value',
                         name: 'choose_item'
                     },
+                    {
+                        type: 'input_value',
+                        name: 'value2'
+                    }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1315,9 +1323,15 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'test_mode',
-                message0: 'テストモードへ投入する',
+                message0: 'テストモードへ投入する 処理結果保存用変数：%1',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'value3'
+                    }
+                ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1326,7 +1340,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'key_push',
-                message0: '%1キーを押す',
+                message0: '%1キーを押す 処理結果保存用変数：%2',
                 args0: [
                     {
                         type: 'field_dropdown',
@@ -1343,10 +1357,45 @@ export default function (ScratchBlocks) {
                             ['調整', 'KEY_ADJUST'],
                             ['リセット', 'KEY_RESET']
                         ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value4'
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
+            });
+        }
+    };
+
+    ScratchBlocks.Blocks.second_tester_test_result = {
+        init: function () {
+            this.jsonInit({
+                type: 'test_result',
+                message0: 'テスト結果が%1か判定する 処理結果保存用変数：%2 テスト結果保存用変数：%3',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'test_result',
+                        options: [
+                            ['待機中', 'RESULT_WAIT'],
+                            ['実行中', 'RESULT_DOING'],
+                            ['OK', 'RESULT_OK'],
+                            ['NG', 'RESULT_NG']
+                        ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value5'
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value6'
+                    }
+                ],
+                category: ScratchBlocks.Categories.ruby,
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1378,7 +1427,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'measure_check',
-                message0: '測定値%1を測る',
+                message0: '測定値%1を測る 処理結果保存用変数：%2 測定値保存用変数：%3',
                 args0: [
                     {
                         type: 'field_dropdown',
@@ -1395,10 +1444,18 @@ export default function (ScratchBlocks) {
                             ['8', '8'],
                             ['9', '9']
                         ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value7'
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value8'
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1407,7 +1464,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'set_clock',
-                message0: '%1を%2に合わせる',
+                message0: '%1を%2に合わせる 処理結果保存用変数：%3',
                 args0: [
                     {
                         type: 'field_dropdown',
@@ -1425,10 +1482,14 @@ export default function (ScratchBlocks) {
                     {
                         type: 'input_value',
                         name: 'time_var'
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value9'
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1437,9 +1498,16 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'load_output_off',
-                message0: '疑似負荷出力をOFFにする',
+                message0: '疑似負荷出力をOFFにする 処理結果保存用変数：%1',
+                args0: [
+
+                    {
+                        type: 'input_value',
+                        name: 'value10'
+                    }
+                ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1448,7 +1516,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'resistance_output',
-                message0: '抵抗出力%1.%2Ωを加える',
+                message0: '抵抗出力%1.%2Ωを加える 処理結果保存用変数：%3',
                 args0: [
                     {
                         type: 'input_value',
@@ -1470,10 +1538,15 @@ export default function (ScratchBlocks) {
                             ['8', '8'],
                             ['9', '9']
                         ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value11'
+
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1482,7 +1555,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'resistance_output_k',
-                message0: '抵抗出力%1.%2%3%4kΩを加える',
+                message0: '抵抗出力%1.%2%3%4kΩを加える 処理結果保存用変数：%5',
                 args0: [
                     {
                         type: 'input_value',
@@ -1536,10 +1609,15 @@ export default function (ScratchBlocks) {
                             ['8', '8'],
                             ['9', '9']
                         ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value12'
+
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1548,7 +1626,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'voltage_output_m',
-                message0: '電圧出力%1.%2%3%4mVを加える',
+                message0: '電圧出力%1.%2%3%4mVを加える 処理結果保存用変数：%5',
                 args0: [
                     {
                         type: 'input_value',
@@ -1602,10 +1680,15 @@ export default function (ScratchBlocks) {
                             ['8', '8'],
                             ['9', '9']
                         ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value13'
+
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1614,7 +1697,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'voltage_output',
-                message0: '電圧出力%1.%2%3%4Vを加える',
+                message0: '電圧出力%1.%2%3%4Vを加える 処理結果保存用変数：%5',
                 args0: [
                     {
                         type: 'field_dropdown',
@@ -1679,10 +1762,15 @@ export default function (ScratchBlocks) {
                             ['8', '8'],
                             ['9', '9']
                         ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value14'
+
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1691,7 +1779,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'current_output_m',
-                message0: '電流出力%1.%2%3%4mAを加える',
+                message0: '電流出力%1.%2%3%4mAを加える 処理結果保存用変数：%5',
                 args0: [
                     {
                         type: 'input_value',
@@ -1745,10 +1833,15 @@ export default function (ScratchBlocks) {
                             ['8', '8'],
                             ['9', '9']
                         ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value15'
+
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1757,7 +1850,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'pt_output',
-                message0: 'Pt100 出力%1.%2℃を加える',
+                message0: 'Pt100 出力%1.%2℃を加える 処理結果保存用変数：%3',
                 args0: [
                     {
                         type: 'input_value',
@@ -1779,10 +1872,15 @@ export default function (ScratchBlocks) {
                             ['8', '8'],
                             ['9', '9']
                         ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value16'
+
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1791,7 +1889,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'k_output',
-                message0: 'K熱電対出力%1.%2℃を加える',
+                message0: 'K熱電対出力%1.%2℃を加える 処理結果保存用変数：%3',
                 args0: [
                     {
                         type: 'input_value',
@@ -1813,10 +1911,15 @@ export default function (ScratchBlocks) {
                             ['8', '8'],
                             ['9', '9']
                         ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value17'
+
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1825,9 +1928,16 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'connection_off',
-                message0: '疑似負荷の接続をOFFにする',
+                message0: '疑似負荷の接続をOFFにする 処理結果保存用変数：%1',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'value18'
+
+                    }
+                ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };
@@ -1836,7 +1946,7 @@ export default function (ScratchBlocks) {
         init: function () {
             this.jsonInit({
                 type: 'connection_change',
-                message0: '疑似負荷の接続をチャンネル%1に切り替える',
+                message0: '疑似負荷の接続をチャンネル%1に切り替える  処理結果保存用変数：%2',
                 args0: [
                     {
                         type: 'field_dropdown',
@@ -1853,10 +1963,14 @@ export default function (ScratchBlocks) {
                             ['8', '8'],
                             ['9', '9']
                         ]
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'value19'
                     }
                 ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };

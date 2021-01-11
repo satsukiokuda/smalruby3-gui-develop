@@ -1189,6 +1189,11 @@ const testersecond = function () {
                     <field name="TEXT"></field>
                 </shadow>
             </value>
+            <value name="value">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         <block type="second_choose_item">
             <value name="choose_item">
@@ -1196,11 +1201,43 @@ const testersecond = function () {
                     <field name="TEXT"></field>
                 </shadow>
             </value>
+            <value name="value2">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         <block type="second_test_mode">
+            <value name="value3">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         <block type="second_key_push">
             <value name="key_push">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+            <value name="value4">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="second_tester_test_result">
+            <value name="test_result">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+            <value name="value5">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+            <value name="value6">
                 <shadow type="text">
                     <field name="TEXT"></field>
                 </shadow>
@@ -1217,6 +1254,16 @@ const testersecond = function () {
                     <field name="NUM"></field>
                 </shadow>
             </value>
+            <value name="value7">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+            <value name="value8">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         <block type="second_set_clock">
             <value name="time_type">
@@ -1229,9 +1276,19 @@ const testersecond = function () {
                     <field name="TEXT"></field>
                 </shadow>
             </value>
+            <value name="value9">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         ${blockSeparator}
         <block type="second_load_output_off">
+            <value name="value10">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         <block type="second_resistance_output">
             <value name="num_main">
@@ -1242,6 +1299,11 @@ const testersecond = function () {
             <value name="num_period">
                 <shadow type="math_number">
                     <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="value11">
+                <shadow type="text">
+                    <field name="TEXT"></field>
                 </shadow>
             </value>
         </block>
@@ -1266,6 +1328,11 @@ const testersecond = function () {
                     <field name="NUM"></field>
                 </shadow>
             </value>
+            <value name="value12">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         <block type="second_voltage_output_m">
             <value name="num_main">
@@ -1286,6 +1353,11 @@ const testersecond = function () {
             <value name="num_period_3">
                 <shadow type="math_number">
                     <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="value13">
+                <shadow type="text">
+                    <field name="TEXT"></field>
                 </shadow>
             </value>
         </block>
@@ -1310,6 +1382,11 @@ const testersecond = function () {
                     <field name="NUM"></field>
                 </shadow>
             </value>
+            <value name="value14">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         <block type="second_current_output_m">
             <value name="num_main">
@@ -1332,6 +1409,11 @@ const testersecond = function () {
                     <field name="NUM"></field>
                 </shadow>
             </value>
+            <value name="value15">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         <block type="second_pt_output">
             <value name="num_main">
@@ -1342,6 +1424,11 @@ const testersecond = function () {
             <value name="num_period">
                 <shadow type="math_number">
                     <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="value16">
+                <shadow type="text">
+                    <field name="TEXT"></field>
                 </shadow>
             </value>
         </block>
@@ -1356,14 +1443,29 @@ const testersecond = function () {
                     <field name="NUM"></field>
                 </shadow>
             </value>
+            <value name="value17">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         ${blockSeparator}
         <block type="second_connection_off">
+            <value name="value18">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         <block type="second_connection_change">
             <value name="channel">
                 <shadow type="math_number">
                     <field name="NUM"></field>
+                </shadow>
+            </value>
+            <value name="value19">
+                <shadow type="text">
+                    <field name="TEXT"></field>
                 </shadow>
             </value>
         </block>
