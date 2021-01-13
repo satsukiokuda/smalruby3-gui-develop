@@ -2000,13 +2000,29 @@ export default function (ScratchBlocks) {
         }
     };
 
-    ScratchBlocks.Blocks.second_measure_num = {
+    ScratchBlocks.Blocks.second_expression2 = {
         init: function () {
             this.jsonInit({
-                type: 'measure_num',
-                message0: '測定値',
+                type: 'ruby_expression',
+                message0: '%1が%2',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'result2',
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'status',
+                        options: [
+                            ['待機中', 'RESULT_WAIT'],
+                            ['実行中', 'RESULT_DOING'],
+                            ['OK', 'RESULT_OK'],
+                            ['NG', 'RESULT_NG']
+                        ]
+                    }
+                ],
                 category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'output_number']
+                extensions: ['colours_tester_second', 'output_boolean']
             });
         }
     };
@@ -2028,28 +2044,6 @@ export default function (ScratchBlocks) {
                 ],
                 category: ScratchBlocks.Categories.ruby,
                 extensions: ['colours_tester_second', 'output_number']
-            });
-        }
-    };
-
-    ScratchBlocks.Blocks.second_test_process = {
-        init: function () {
-            this.jsonInit({
-                type: 'test_process',
-                message0: '%1をして 結果を%2に保存する',
-                args0: [
-                    {
-                        type: 'input_value',
-                        name: 'process'
-
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'result_var',
-                    }
-                ],
-                category: ScratchBlocks.Categories.ruby,
-                extensions: ['colours_tester_second', 'shape_statement']
             });
         }
     };

@@ -226,26 +226,23 @@ export default function (Generator) {
     };
 
     Generator.second_expression = function (block) {
-        const order = Generator.ORDER_FUNCTION_CALL;
+        const order = Generator.ORDER_LOGICAL_OR;
         const result = getUnquoteText(block, 'result', Generator.ORDER_NONE);
         const ok_ng = Generator.getFieldValue(block, 'ok_ng') || null;
-        return [`${result} == ${ok_ng}`,order];
+        return [`${Generator.nosToCode(result)} == ${Generator.nosToCode(ok_ng)}`,order];
     };
 
-    Generator.second_measure_num = function (block) {
-        return [`value`,Generator.ORDER_ATOMIC];
+    Generator.second_expression2 = function (block) {
+        const order = Generator.ORDER_LOGICAL_OR;
+        const result2 = getUnquoteText(block, 'result2', Generator.ORDER_NONE);
+        const status = Generator.getFieldValue(block, 'status') || null;
+        return [`${Generator.nosToCode(result2)} == ${Generator.nosToCode(status)}`,order];
     };
 
     Generator.second_double_var = function (block) {
         const var1 = getUnquoteText(block, 'var1', Generator.ORDER_NONE);
         const var2 = getUnquoteText(block, 'var2', Generator.ORDER_NONE);
         return [`${var1},${var2}`,Generator.ORDER_ATOMIC];
-    };
-
-    Generator.second_test_process = function (block) {
-        const process = getUnquoteText(block, 'process', Generator.ORDER_NONE);
-        const result_var = getUnquoteText(block, 'result_var', Generator.ORDER_NONE);
-        return `${result_var} = ${process}\n`;
     };
 
     Generator.second_show = function (block) {
